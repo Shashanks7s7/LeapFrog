@@ -1,0 +1,291 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:rgb(247, 240, 300);
+}
+li{
+    display: inline;
+    float: left;
+}
+li a{
+    
+    display: block;
+    margin: 20px 0px;
+    padding: 14px 16px;
+    background-color:rgb(247, 240, 300);
+    text-decoration: none;
+    text-align: center;
+}
+li a:hover{
+    background-color: grey;
+}
+li h2{
+    margin: 20px;
+    padding: 10px 10px;
+    background-color:rgb(247, 240, 300) ;
+    text-decoration: none;
+    text-align: center;
+}
+form{
+    
+    height: 20px;
+    margin: 0px 0px;
+    padding: 14px 16px;
+    background-color:rgb(247, 240, 300) ;
+    text-decoration: none;
+    
+}
+.search1{
+    margin: 4px 2px;
+    padding: 12px 25px;
+    width: 110px;
+    height: 15px;
+}
+.search2{
+    padding: 5px;
+    width: 70px;
+    height: 30px;
+}
+.color{
+    margin: 40px;
+    
+}
+.primarycolorr{
+    
+    height: 20%;
+    margin-bottom: 100px;
+
+
+}
+.containerview{
+    float: left;
+     width: 10%;
+     height: 10%;
+}
+.colorcontainer{
+    
+    height: 60px;
+    width: 120px;
+    
+    border-radius: 15px;
+  
+}
+.primarycolorr .secondarycolorr {
+ display:inline-block
+}
+.typography{
+   
+    clear: left;
+    margin: 40px;
+
+}
+.typocol{
+    float: left;
+    width: 42%;
+    padding: 20px;
+}
+.tab {
+    margin: 20px;
+    overflow: hidden;
+    
+ 
+  }
+  .tab button {
+    background-color: inherit;
+    float: left;
+    
+    outline: 1px;;
+    
+    padding: 14px 16px;
+    transition: 0.3s;
+  }  
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+
+  .tabcontent {
+   width: 48%;
+    padding: 6px 12px;
+    
+    border-top: none;
+  }
+  table, th,td{
+      margin: 40px;
+      padding: 20px;
+  }
+  .button {
+    background-color: #7749f8;
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .outlinebutton{
+  
+    border: 1px solid  #7749f8 ;
+    background-color: white;
+   
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    padding: 12px 25px;
+    color:  #7749f8;
+    cursor: pointer;
+  }
+  .b1{
+      border:1px solid #54595E;
+      color: #54595E;
+  }
+  .b2{
+      background-color: #5227CC;
+  }
+  .b3{
+      background-color: #393E46;
+  }
+  .b4{
+      background-color:#54595E ;
+  }
+  .b5{
+    border:1px solid #54595E;
+    color: #5227CC;
+}
+  .form{
+   
+    margin: 40px;
+}
+  .inputtypetext1{
+   width: 300px;
+   border:1px solid #ABB5BE;
+  }
+  .checkboxtable{
+    margin:  2px 0px;
+    padding: 5px;
+  }
+  .formcol1{
+    float: left;
+    width: 40%;
+    padding: 20px;
+}
+.formcol2{
+    float: left;
+    width: 50%;
+    padding: 20px;
+}
+.componentstable{
+ border-collapse: collapse;margin: 50px;
+}
+.comptd{
+border: 1px solid gray;
+width:300px;
+
+}
+.listgroup{
+    clear: left;
+    margin: 40px;
+}
+.tables{
+    clear: left;
+    margin: 80px;
+}
+.tabletable{
+    margin: 0;
+    margin-top: 60px;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: start;
+    padding: 20px;
+    border: 1px solid;
+    border-top-color: grey;
+    border-bottom-color: grey;
+    border-left-color: transparent;
+    border-right-color: transparent;
+ 
+}
+
+.tabletd{
+    border: 1px solid;
+    border-top-color: grey;
+    border-bottom-color: grey;
+    border-left-color: transparent;
+    border-right-color: transparent;
+
+}
+.tabletr:nth-child(even) {
+    background-color: rgb(247, 240, 300);
+    
+}
+
+.paging {
+    padding: 12px 17px; 
+    border: 1px solid  #7749f8 ;
+    background-color: white;
+   
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    color:  #7749f8;
+    cursor: pointer;
+  
+}
+.cardshape{
+    margin: 20px;
+    float: left;
+    width: 280px;
+    height: 320px;
+    box-shadow: 3px 3px 3px grey;
+    border: 1px hidden grey;
+
+}
+.cardhead1{
+    float: left;
+    padding: 10px;
+
+}
+.imgcircle1{
+    width: 30px;
+    height:30px;
+    background-size: cover;
+    display: block;
+     border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    float: left;
+ 
+    background-image: url('https://thumbs.dreamstime.com/b/cristiano-ronaldo-torino-italy-april-cristiano-ronaldo-juventus-fc-serie-match-juventus-fc-ssc-napoli-215614706.jpg');
+   }
+   .textstyle1{
+       font-size: medium;
+   }
+   .textstyle2{
+       font-size: medium;
+       color: grey;
+   }
+   .posicon{
+       position:relative;
+       left: 120px;
+       bottom: 25px;
+   }
+  
