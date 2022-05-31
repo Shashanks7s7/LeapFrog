@@ -1,5 +1,17 @@
 .logo {
   float: left;
+  width: 191px;
+height: 45px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+
+
+
+color: #4E42D9;
+
 }
 .navlist {
   float: right;
@@ -10,17 +22,36 @@
   display: inline;
   padding: 0px 20px;
   align-content: center;
+  width: 67px;
+height: 24px;
+
+/* Base */
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height */
+
+
+/* Body / Paragraph */
+
+color: #797979;
 }
 .butnnav {
   background-color: #7749f8;
   border: none;
   color: white;
 
-  width: 100px;
-  height: 30px;
+ border-radius: 4px;
   text-align: center;
   text-decoration: none;
-
+  padding: 16px 30px;
+  gap: 10px;
+  
+  width: 126px;
+  height: 50px;
   cursor: pointer;
 }
 .butnnav.explorebtn{
@@ -45,7 +76,7 @@
   width: 129px;
 height: 18px;
 
-font-family: 'Poppins';
+font-family: 'Roboto';
 font-style: normal;
 font-weight: 600;
 font-size: 16px;
@@ -57,7 +88,7 @@ color: #FFFFFF;
   width: 73px;
 height: 18px;
 
-font-family: 'Poppins';
+font-family: 'Roboto';
 font-style: normal;
 font-weight: 600;
 font-size: 16px;
@@ -96,7 +127,7 @@ float: left;
 .textstyletitle{
   
   
-    font-family: 'Poppins';
+    font-family: 'Roboto';
 font-style: normal;
 font-weight: 700;
 font-size: 36px;
@@ -119,7 +150,7 @@ line-height: 130%;
   left: 605px;
   top: 782px;
 text-align: center;
-font-family: 'Poppins';
+font-family: 'Roboto';
 font-style: normal;
 font-weight: 600;
 font-size: 32px;
@@ -176,7 +207,7 @@ background: #FF4E4E;
   width: 285px;
 height: 38px;
 
-font-family: 'Poppins';
+font-family: 'Roboto';
 font-style: normal;
 font-weight: 500;
 font-size: 25px;
@@ -196,7 +227,7 @@ color: #3B3950;
   width: 285px;
 height: 56px;
 
-font-family: 'Poppins';
+font-family: 'Roboto';
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
@@ -213,10 +244,10 @@ color: #797979;
 .blog{
 clear: left;
   position: absolute;
-  width: 1440px;
-  height: 887px;
+  width:1349px;
+  height: 90px;
   left: 0px;
-  top: 1167px;
+  top: 1190px;
   
   background: #F8F8F8;
 }
@@ -225,14 +256,14 @@ clear: left;
   width: 559px;
   height: 101px;
   left: 440px;
-  top: 60px;
+  top: 120px;
   
 }
 .blogtitle{
   width: 73px;
 height: 45px;
-
-font-family: 'Poppins';
+display: inline;
+font-family: 'Roboto';
 font-style: normal;
 font-weight: 600;
 font-size: 32px;
@@ -246,7 +277,7 @@ color: #3B3950;
   width: 559px;
 height: 48px;
 
-font-family: 'Poppins';
+font-family: 'Roboto';
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
@@ -265,20 +296,20 @@ color: #797979;
   gap: 20px;
   
   position: absolute;
-  width: 1200px;
+
   height: 479px;
   left: 0px;
-  top:201px;
+  top:260px;
   
 }
 .blogcard{
-  margin: 0px 20px;
+  margin: 0px 50px;
   float: left;
   height: 450px;
   width:350.67px;
 }
 .img{
-  width: 368.67px;
+  width: 386.67px;
 height: 281px;
 border-radius: 4px;
 background-image: url("assets/thumbnail-lasetnet.jpg");
@@ -289,10 +320,10 @@ object-fit: fill;
   width: 129px;
 height: 20px;
 
-font-family: 'Poppins';
+font-family: 'Roboto';
 font-style: normal;
 font-weight: 500;
-font-size: 14px;
+font-size: 14px; 
 line-height: 140%;
 text-align: start;
 
@@ -305,7 +336,7 @@ color: #797979;
   width: 257px;
 height: 25px;
 
-font-family: 'Poppins';
+font-family: 'Roboto';
 font-style: normal;
 font-weight: 600;
 font-size: 18px;
@@ -323,7 +354,7 @@ color: #3B3950;
   width: 386.67px;
 height: 120px;
 
-font-family: 'Poppins';
+font-family: 'Roboto';
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
@@ -333,8 +364,160 @@ text-align: start;
 
 letter-spacing: 0.01em;
 
-/* Body / Paragraph */
+
 
 color: #797979;
 
+}
+.viewbutton{
+  padding: 16px 30px;
+gap: 10px;
+
+position: absolute;
+width: 125px;
+height: 50px;
+left: 620px;
+top: 1980px;
+
+background: #4E42D9;
+border-radius: 4px;
+}
+.viewbuttontext{
+  width: 65px;
+height: 18px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 110%;
+
+color: #FFFFFF;
+
+}
+.footersection{
+  position: absolute;
+left: 0%;
+right: 0%;
+top: 320%;
+bottom: 0%;
+
+height:342px;
+background: #292838;
+
+}
+.footer1{
+  padding: 0px;
+gap: 12px;
+height: 129px;
+width: 398px;
+position: relative;
+left: 8.19%;
+right: 64.17%;
+top: 18.09%;
+bottom: 49.5%;
+float: left;
+}
+.footer1text1{
+  width: 195px;
+height: 45px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 30px;
+line-height: 45px;
+/* identical to box height */
+
+
+color: #FFFFFF;
+}
+.footer1text2{
+  width: 398px;
+height: 72px;
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+/* or 24px */
+
+
+color: rgba(255, 255, 255, 0.8);
+}
+.footer2{
+  
+  padding: 0px;
+gap: 89px;
+
+position: absolute;
+width: 521px;
+height: 198px;
+left: 730px;
+top: 72px;
+}
+.fabout{
+  width: 90px;
+  height: 198px;
+  float: left;
+}
+.faboutt1{
+  width: 100px;
+height: 20px;
+margin-bottom: 24px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 110%;
+/* identical to box height, or 20px */
+
+text-transform: uppercase;
+
+color: #FFFFFF;
+}
+.fabouttsubtitle{
+  width: 49px;
+height: 18px;
+margin-bottom: 16px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 110%;
+/* identical to box height, or 18px */
+
+
+color: rgba(255, 255, 255, 0.8);
+}
+.fcustomers{
+  margin-left: 89px;
+  float: left;
+  width: 111px;
+  height: 198px;
+}
+.fsupport{
+  width: 142px;
+  height: 198px;
+  float: left;
+  margin-left:89px ;
+}
+
+.footertext{
+  position: absolute;
+left: 42.57%;
+right: 42.64%;
+top: 30.7%;
+bottom: 4.27%;
+clear: left;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 140%;
+/* identical to box height, or 20px */
+
+
+color: rgba(255, 255, 255, 0.8);
 }

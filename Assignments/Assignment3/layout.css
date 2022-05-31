@@ -2,3 +2,13 @@ nav{
 
 padding: 20px;
 }
+footer{
+  height: 56px;  
+    position: absolute;
+left: 0%;
+right: 0%;
+top: 370%;
+bottom: 0%;
+
+background: #23222F;
+}
