@@ -3,7 +3,7 @@
   width: 191px;
 height: 45px;
 
-font-family: 'Roboto';
+font-family: 'Poppins';
 font-style: normal;
 font-weight: 600;
 font-size: 30px;
@@ -25,24 +25,33 @@ color: #4E42D9;
   width: 67px;
 height: 24px;
 
-/* Base */
 
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 24px;
-/* identical to box height */
-
-
-/* Body / Paragraph */
-
-color: #797979;
 }
+.navlist li a{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+    
+  color: #797979;
+    text-decoration: none;
+  
+}
+
+
 .butnnav {
-  background-color: #7749f8;
+  background-color:  #4E42D9;
+  ;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 110%;
+ 
   border: none;
-  color: white;
+  
+  color: #FFFFFF;
 
  border-radius: 4px;
   text-align: center;
@@ -53,6 +62,46 @@ color: #797979;
   width: 126px;
   height: 50px;
   cursor: pointer;
+}
+
+
+@media screen and ( max-width:720px) {
+  .logo {
+    float: none;
+    width: 100%;
+  height: 45px;
+  
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  
+  text-align: center;
+  
+  color: green;
+  
+  }
+
+  
+}
+@media screen and (max-width:384px) {
+  .logo {
+    float: none;
+    width: 100%;
+  height: 45px;
+  
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  
+  text-align: center;
+  
+  color: red;
+  
+  }
+
+  
 }
 .butnnav.explorebtn{
   background-color: #4E42D9;
@@ -76,7 +125,7 @@ color: #797979;
   width: 129px;
 height: 18px;
 
-font-family: 'Roboto';
+font-family: 'Poppins';
 font-style: normal;
 font-weight: 600;
 font-size: 16px;
@@ -88,7 +137,7 @@ color: #FFFFFF;
   width: 73px;
 height: 18px;
 
-font-family: 'Roboto';
+font-family: 'Poppins';
 font-style: normal;
 font-weight: 600;
 font-size: 16px;
@@ -120,16 +169,14 @@ float: left;
    float: left;
     width: 578px;
     height: 130px;
-
- 
-    
+   
 }
 .textstyletitle{
   
   
-    font-family: 'Roboto';
-font-style: normal;
-font-weight: 700;
+    font-family: 'Poppins';
+
+font-weight:bolder;
 font-size: 36px;
 line-height: 130%;
     
@@ -140,17 +187,33 @@ line-height: 130%;
     padding: 10px;
 }
 .whatwedo{
-  padding-top: 72px;
+ 
 
+ 
+height: 57px;
+margin-bottom: 20px;
+text-align: center;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 177.9%;
+/* identical to box height, or 57px */
+
+letter-spacing: 0.01em;
+
+/* Body / Title */
+
+color: #3B3950;
 }
 .blog{
   position: absolute;
   width: 196px;
   height: 57px;
   left: 605px;
-  top: 782px;
+  top: 850px;
 text-align: center;
-font-family: 'Roboto';
+font-family: 'Poppins';
 font-style: normal;
 font-weight: 600;
 font-size: 32px;
@@ -169,9 +232,9 @@ gap: 20px;
 
 position: absolute;
 width: 1200px;
-height: 216px;
+height: 313px;
 left: 120px;
-top: 879px;
+top: 782px;
 
 }
 .boxlogo{
@@ -181,17 +244,17 @@ top: 879px;
   left: 97px;
   top: 0px;
   
-  background: #FFF2F2;
+  background-image: url(assets/icon-web-app.png);
   border-radius: 20px;
 }
 .boxlogo.two{
-  background: #E2F3FF;
+  background-image: url(assets/icon-seo.png);
 }
 .boxlogo.three{
-  background: #FDFBDA;
+  background-image: url(assets/icon-game.png);
 }
 .boxlogo.four{
-  background: #FFE7FB;
+  background-image: url(assets/icon-ai.png);
 }
 .smallbox{
   position: absolute;
@@ -207,9 +270,9 @@ background: #FF4E4E;
   width: 285px;
 height: 38px;
 
-font-family: 'Roboto';
+font-family: 'Poppins';
 font-style: normal;
-font-weight: 500;
+font-weight: 600;
 font-size: 25px;
 line-height: 150%;
 
@@ -227,7 +290,7 @@ color: #3B3950;
   width: 285px;
 height: 56px;
 
-font-family: 'Roboto';
+font-family: 'Poppins';
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
@@ -245,25 +308,37 @@ color: #797979;
 clear: left;
   position: absolute;
   width:1349px;
-  height: 90px;
+  height:900px;
   left: 0px;
-  top: 1190px;
+  top: 1167px;
   
-  background: #F8F8F8;
+  background: #F8F8F3;
+}
+.blogmain{
+  align-items: center;
+padding: 0px;
+gap: 40px;
+
+position: absolute;
+width: 1200px;
+height: 620px;
+left:60px;
+top: 12px;
+
 }
 .blogheading{
-  position: absolute;
+  position: relative;
   width: 559px;
   height: 101px;
-  left: 440px;
-  top: 120px;
+  left: 340px;
+  top: 12px;
   
 }
 .blogtitle{
   width: 73px;
 height: 45px;
 display: inline;
-font-family: 'Roboto';
+font-family: 'Poppins';
 font-style: normal;
 font-weight: 600;
 font-size: 32px;
@@ -277,7 +352,7 @@ color: #3B3950;
   width: 559px;
 height: 48px;
 
-font-family: 'Roboto';
+font-family: 'Poppins';
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
@@ -293,34 +368,38 @@ color: #797979;
 }
 .bloglist{
   padding: 0px;
-  gap: 20px;
+  
   
   position: absolute;
 
   height: 479px;
-  left: 0px;
-  top:260px;
+  left: 5px;
+  top:150px;
   
 }
 .blogcard{
-  margin: 0px 50px;
+  margin: 0px 20px;
+
   float: left;
   height: 450px;
-  width:350.67px;
+  width:351.67px;
 }
 .img{
-  width: 386.67px;
+  width: 351.67px;
 height: 281px;
 border-radius: 4px;
 background-image: url("assets/thumbnail-lasetnet.jpg");
 object-fit: fill;
+background-position: center;
+background-size: cover;
+
 }
 .date{
   margin-top: 12px;
   width: 129px;
 height: 20px;
 
-font-family: 'Roboto';
+font-family: 'Poppins';
 font-style: normal;
 font-weight: 500;
 font-size: 14px; 
@@ -336,11 +415,11 @@ color: #797979;
   width: 257px;
 height: 25px;
 
-font-family: 'Roboto';
+font-family: 'Poppins';
 font-style: normal;
 font-weight: 600;
 font-size: 18px;
-line-height: 140%;
+line-height: 130%;
 /* or 25px */
 
 letter-spacing: 0.01em;
@@ -351,10 +430,10 @@ color: #3B3950;
 }
 .blogt2{
   margin-top: 8px;
-  width: 386.67px;
+  width: 351.67px;
 height: 120px;
 
-font-family: 'Roboto';
+font-family: 'Poppins';
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
@@ -371,14 +450,14 @@ color: #797979;
 }
 .viewbutton{
   padding: 16px 30px;
-gap: 10px;
+
 
 position: absolute;
 width: 125px;
 height: 50px;
 left: 620px;
-top: 1980px;
-
+top: 1880px;
+border: none;
 background: #4E42D9;
 border-radius: 4px;
 }
@@ -386,7 +465,7 @@ border-radius: 4px;
   width: 65px;
 height: 18px;
 
-font-family: 'Roboto';
+font-family: 'Poppins';
 font-style: normal;
 font-weight: 700;
 font-size: 16px;
@@ -399,7 +478,7 @@ color: #FFFFFF;
   position: absolute;
 left: 0%;
 right: 0%;
-top: 320%;
+top: 340%;
 bottom: 0%;
 
 height:342px;
@@ -422,7 +501,7 @@ float: left;
   width: 195px;
 height: 45px;
 
-font-family: 'Roboto';
+font-family: 'Poppins';
 font-style: normal;
 font-weight: 700;
 font-size: 30px;
@@ -436,7 +515,7 @@ color: #FFFFFF;
   width: 398px;
 height: 72px;
 
-font-family: 'Roboto';
+font-family: 'Poppins';
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
@@ -466,7 +545,7 @@ top: 72px;
   width: 100px;
 height: 20px;
 margin-bottom: 24px;
-font-family: 'Roboto';
+font-family: 'Poppins';
 font-style: normal;
 font-weight: 600;
 font-size: 18px;
@@ -481,7 +560,7 @@ color: #FFFFFF;
   width: 49px;
 height: 18px;
 margin-bottom: 16px;
-font-family: 'Roboto';
+font-family: 'Poppins';
 font-style: normal;
 font-weight: 400;
 font-size: 16px;
@@ -508,10 +587,11 @@ color: rgba(255, 255, 255, 0.8);
   position: absolute;
 left: 42.57%;
 right: 42.64%;
-top: 30.7%;
+top: 34.7%;
 bottom: 4.27%;
+width: 400px;
 clear: left;
-font-family: 'Roboto';
+font-family: 'Poppins';
 font-style: normal;
 font-weight: 500;
 font-size: 14px;
