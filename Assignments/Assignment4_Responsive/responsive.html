@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Webflow Workshop</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="layout.css" />
   <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="responsive.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
   </style>
@@ -32,12 +33,15 @@
   </header>
 
   <section class="home" id="home">
+
     <div class="homemain">
+
       <div class="homecol1">
-        <div style="width: 500px; height: 141px; margin-top: 54px;">
-          <p class="textstyletitle">We do the work you stay focused on your customers.</p>
+
+        <div class="textstyletitle">
+          We do the work you stay focused on your customers.
         </div>
-        <div style="width: 456px; height: 216px; margin-top: 12px;">
+        <div class="subt">
           <p class="textstylesubtitle">Awwwsome. is a digital agency passionate about storytelling, visual design, and
             technology. We collaborate with companies small to large around the world to help them engage their
             audiences and build brand awareness.
@@ -47,13 +51,13 @@
             professional execution.
           </p>
         </div>
-        <div style="padding: 100px 10px;">
-          <div class="buttonmain">
+        <div class="buttonrow">
+          <div class="buttonmain ">
             <button class="butnnav explorebtn">
               <div class="buttontext"> Explore Projects</div>
             </button>
           </div>
-          <div class="buttonmain " style="float:  left; margin-left: 12px;">
+          <div class="buttonmain buttonmain1 ">
             <button class="butnnav about">
               <div class="buttontextabout"> About Us</div>
             </button>
@@ -62,11 +66,11 @@
 
 
       </div>
-    </div>
-    <div class="homecol2">
 
-      <img src="assets/hero image.png" alt="Image Not Found">
-    </div>
+      <div class="homecol2">
+
+        <img src="assets/hero image.png" alt="Image Not Found">
+      </div>
     </div>
 
     <div class="cardlist">
@@ -74,7 +78,7 @@
         What we do
       </div>
       <div class="card">
-        <div class="boxlogo">
+        <div class="boxlogo" style="background-image: url(assets/icon-web-app.png);">
 
         </div>
         <div class="cardtitle"> Web Application</div>
@@ -102,7 +106,7 @@
         <div class="cardsubtitle">Advanced autonomous technologies to make life simple </div>
       </div>
     </div>
-    <div class="blog">
+     <div class="blog">
       <div class="blogmain">
 
         <div class="blogheading">
@@ -111,8 +115,8 @@
             all here.</div>
         </div>
         <div class="bloglist">
-          <div class="blogcard" style="margin-left: 40px;">
-            <div class="img">
+          <div class="blogcard blogcard1" >
+            <div class="img" style="   background-image: url(assets/thumbnail-lasetnet.jpg);">
 
             </div>
             <div class="date">November 10, 2021 </div>
@@ -126,9 +130,9 @@
 
             </div>
             <div class="date">February 21, 2021 </div>
-            <div class="blogt1" style="height:50px; width: 351.67px;"> How we helped an Orthopedic Practice Increase
+            <div class="blogt1 blogt11"> How we helped an Orthopedic Practice Increase
               their traffic</div>
-            <div class="blogt2" style=" width: 305px; height: 96px;"> We are honored and excited to be working with The
+            <div class="blogt2 blogt22"> We are honored and excited to be working with The
               Orthopedic Institute of New Jersey, the largest practice in northwest New Jersey.</div>
           </div>
           <div class="blogcard">
@@ -136,9 +140,9 @@
 
             </div>
             <div class="date">July 03, 2021 </div>
-            <div class="blogt1" style="height: 50px; width: 351.67px;"> The Increasing importance of Web Accessibility
+            <div class="blogt1 blogt12" > The Increasing importance of Web Accessibility
             </div>
-            <div class="blogt2" style="height: 48px; width: 305px;">Is your website accessible to visitors with
+            <div class="blogt2 blogt23" >Is your website accessible to visitors with
               impairments?</div>
           </div>
 
@@ -146,10 +150,11 @@
       </div>
     </div>
     </div>
-    <button class="viewbutton">
+      <button class="viewbutton">
       <div class="viewbuttontext">View All</div>
-    </button>
-    <div class="footersection">
+    </button> 
+  <!-- 
+     <div class="footersection"> 
       <div class="footer1">
 
         <div class="footer1text1"> Awwwsome.</div>
@@ -184,8 +189,8 @@
           <div class="fabouttsubtitle" style="width: 140px;">Customer Service</div>
           <div class="fabouttsubtitle">Guide</div>
 
-        </div>
-      </div>
+        </div> 
+      </div> -->
     </div>
   </section>
   <footer>
