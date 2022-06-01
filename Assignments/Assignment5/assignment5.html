@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS</title>
+  <link rel="stylesheet" href="Assets/CSS/style.css" />
+  <link rel="stylesheet" href="../Assignment2_CSS/font-awesome-4.7.0/css/font-awesome.min.css">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul class="navlist">
+        <div class="logo">UI KIT</div>
+        <li><a class="headertextstyle" href="#color">Color</a></li>
+        <li><a class="headertextstyle" href="#typography">Typography</a></li>
+        <li><a class="headertextstyle" href="#buttons">Buttons</a></li>
+        <li><a class="headertextstyle" href="#form">Forms</a></li>
+        <li><a class="headertextstyle" href="#listgroup">List Group</a></li>
+        <li><a class="headertextstyle" href="#tables">Table</a></li>
+        <li><a class="headertextstyle" href="#card">Card</a></li>
+
+        <li style="float: right">
+          <div class="form">
+            <input type="text" class="search" placeholder="  Search" />
+            <input type="submit" value="Search" class="outlinebutton" style="border-color: green; color: green" />
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section class="color" id="color">
+    <p class="title">Color</p>
+
+    <hr />
+
+    <div class="primarycolorr">
+      <p class="subtitle">Primary Color</p>
+
+      <div class="containerview">
+        <div class="colorcontainer" style="background-color: #7749f8"></div>
+        <p class="textstylecolorcontainer">Primary</p>
+        <p class="textstylecolorcode">#7749F8</p>
+      </div>
+      <div class="containerview">
+        <div class="colorcontainer" style="background-color: #5227cc"></div>
+        <p class="textstylecolorcontainer">Primary Dark</p>
+        <p class="textstylecolorcode">#5227CC</p>
+      </div>
+      <div class="containerview">
+        <div class="colorcontainer" style="background-color: #ebe5fc"></div>
+        <p class="textstylecolorcontainer">Primary Light</p>
+        <p class="textstylecolorcode">#ebe5fc</p>
+      </div>
+    </div>
+  </section>
+  <section class="typography" id="typography">
+    <p class="title">Tabs</p>
+
+    <hr />
+
+    <div class="tab">
+      <div class="tabsss">
+        <button class="tablinks" style="border-bottom: 0px">
+          <div class="tabtext">Home</div>
+        </button>
+        <button class="tablinks">
+          <div class="tabtext">Profile</div>
+        </button>
+        <button class="tablinks">
+          <div class="tabtext">Contact</div>
+        </button>
+      </div>
+    </div>
+    <div class="tabcontent">
+      <p>
+        Raw denim you probably haven't heard of them jean shorts Austin.
+        Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache
+        cliche tempor, williams burg carles vegan helvetica. Reprehenderit
+        butcher retro keffiyeh dreamc atcher synth. Cosby sweater eu banh mi,
+        qui irure terry richardson ex squid. Aliquip placeat salvia cillum
+        iphone. Seitan aliquip quis cardigan american apparel, butcher
+        voluptate nisi qui.
+      </p>
+    </div>
+  </section>
+  <section class="buttonclass" id="buttons">
+
+    <p class="title">Buttons</p>
+
+
+
+    <hr />
+
+    <div class="butn">
+      <p class="subtitle">Primary</p>
+      <table>
+        <tr>
+          <td></td>
+          <td class="headertextstyle">default</td>
+          <td class="headertextstyle">Outline</td>
+        </tr>
+        <tr>
+          <td class="headertextstyle">default</td>
+          <td> <button class="button">Primary</button> </td>
+          <td><button class="outlinebutton">Outline</button></td>
+        </tr>
+        <tr>
+          <td class="headertextstyle">hover</td>
+          <td> <button class="button b2 ">Primary</button> </td>
+          <td><button class="button">Outline</button></td>
+        </tr>
+        <tr>
+          <td class="headertextstyle">focus</td>
+          <td> <button class="button b2" autofocus>Primary</button> </td>
+
+        </tr>
+      </table>
+
+    </div>
+    </div>
+  </section>
+  <section class="formclass" id="form">
+
+    <p class="title">Forms</p>
+
+  
+    
+    <hr />
+    
+      <div class="formcol1">
+        <div>
+          <p class="subtitle">Components</p>
+          <br>
+          <table class="componentstable">
+            <tr style="border: 1px solid #DEE2E6; ">
+              <td >
+                Color
+              </td>
+            </tr>
+            <tr>
+              <td class="comptd">Typography</td>
+            </tr>
+            <tr >
+              <td class="comptd">Butttons</td>
+            </tr>
+            <tr >
+              <td class="comptd b2" >Forms</td>
+            </tr>
+            <tr >
+              <td class="comptd">List Group</td>
+            </tr>
+            <tr >
+              <td class="comptd">Table</td>
+            </tr>
+            <tr >
+              <td class="comptd">Card</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+        <div class="formcol2">
+          <p class="subtitle1" style="padding-top: 40px;">Input</p>
+          <input
+          type="text"
+          class="search1 inputtypetext1"
+          placeholder="Placeholder"
+          />
+          <br>
+           <br>
+          <p class="subtitle1">Select Menu</p>
+          
+          <select name="Select Menu" id="Select Menu" style="width: 355px; height: 40px; border: 1px solid #ABB5BE;
+          padding: 8px 15px;font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 21px;
+color: #6C757D;
+          ">
+            <option value="1" >    Select Menu</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+           
+          </select>
+          <br>
+          <br>
+          <p class="subtitle1">Text Area</p>
+         
+          <textarea name="textarea"
+          style="padding: 0px 16px; padding-top: 16px; font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 21px;
+          color: #ABB5BE; "
+          id="" cols="46" rows="6" placeholder=" Write your message here"></textarea>
+          <br>
+          <br>
+          <p class="subtitle1">Checkboxes</p>
+          
+          <table class="checkboxtable" style="margin: 0px;">
+            <tr>
+              <td class="cbtext1">Checkboxes</td>
+              <td class="cbtext1">Checkboxes Inline</td>
+            </tr>
+            <tr>
+              <td>
+                <span style="text-align:justify;">
+                <input type="checkbox" id="1" name="1" value="Default checkbox">
+                <label for="1" class="cbtext2">Default checkbox</label></span>
+              </td>
+              <td> <input type="checkbox" id="2" name="1" value="Default checkbox">
+                <label for="2"  class="cbtext2">Default checkbox</label>
+              </td>
+              <td> <input type="checkbox" id="3" name="1" value="Default checkbox">
+                <label for="3"  class="cbtext2">Default checkbox</label>
+              </td>
+              <td> <input type="checkbox" id="4" name="1" value="Default checkbox" disabled>
+                <label for="4" class="cbtext2">Default (disabled)<label>
+              </td>
+            </tr>
+            <tr>
+              <td> <input type="checkbox" id="5" name="1" value="Default checkbox">
+                <label for="5" class="cbtext2" >Default checkbox</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                 <input type="checkbox"  id="6" name="1"  disabled style="vertical-align:baseline;" >
+                <label for="6" class="cbtext2" >Default (disabled)</label>
+              </td>
+            </tr>
+          </table>
+          <p class="subtitle1">Radios</p>
+          
+          <table class="checkboxtable">
+            <tr>
+              <td class="cbtext1">Radios</td>
+              <td class="cbtext1">Radios Inline</td>
+            </tr>
+            <tr>
+              <td> <input type="radio" id="1" name="1" value="1">
+                 <label class="cbtext2"  for="1">Default Radio</label><br></td>
+                <td> <input type="radio" id="1" name="1" value="1">
+                   <label class="cbtext2"   for="1">Default Radio</label><br></td>
+                  <td> <input type="radio" id="1" name="1" value="1">
+                     <label class="cbtext2"   for="1">Selected Radio</label><br></td>
+                    <td> <input type="radio" id="1" name="1" value="1" disabled>
+                       <label class="cbtext2"   for="1">Disabled Radio</label><br></td>
+            </tr>
+            <tr>
+              <td> <input type="radio" id="1" name="1" value="1">
+                 <label class="cbtext2"   for="1">Selected Radio</label><br></td>
+            </tr>
+            <tr>
+              <td> <input type="radio" id="1" name="1" value="1" disabled>
+                 <label class="cbtext2"    for="1">Disabled Radio</label><br></td>
+            </tr>
+          </table>
+          <br>
+          <br>
+          <p class="subtitle1">Validation</p>
+          <br>
+          <label for="validation"> Input Success</label><br>
+          <input
+          type="text"
+          id="validation"
+          class="search1 inputtypetext1"
+     
+          style="border: 1px solid green;"
+         
+          /> <br><br>
+          <label for="validation"> Input Error</label><br>
+          <input
+          type="text"
+          id="validation"
+          class="search1 inputtypetext1"
+     
+          style="border: 1px solid red;"
+         
+          />
+        </div>
+
+      
+  </section>
+
+  <section class="listgroup" id="listgroup">
+    <p class="title" style="clear: left;">List Group</p>
+
+    
+    <hr />
+   
+    <div>
+      
+      <div class="customcol">
+        <p class="subtitle">Custom content</p>
+          
+           <table class="contenttable">
+           <tr>
+             <td class="comptd b2" >
+               <div class="tablecustomcontent">
+                 <div style="float: left; width: 77%; color: white;">
+                 <h4>List group item heading</h4>
+                 </div>
+                 <div  style="float: left; width: 23%; color: white;">
+                  <p style="font-size:x-small">3 days ago</p>
+                  </div>
+                  <br>
+                  <br>
+                  <p style="color: white;">
+                    Donec id elit non mi porta gravida at eget metus. 
+Maecenas sed diam eget risus varius blandit.
+                  </p><br>
+                  <p style="font-size: small; color: white;">Donec id elit non mi porta</p>
+               </div>
+             </td>
+           </tr>
+           <tr>
+            <td class="comptd ">
+              <div class="tablecustomcontent">
+                <div style="float: left; width: 77%;">
+                <h4>List group item heading</h4>
+                </div>
+                <div  style="float: left; width: 23%;">
+                 <p style="font-size:x-small">3 days ago</p>
+                 </div>
+                 <br>
+                 <br>
+                 <p>
+                   Donec id elit non mi porta gravida at eget metus. 
+Maecenas sed diam eget risus varius blandit.
+                 </p><br>
+                 <p style="font-size: small; color:gray;">Donec id elit non mi porta</p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="comptd ">
+              <div class="tablecustomcontent">
+                <div style="float: left; width: 77%;">
+                <h4>List group item heading</h4>
+                </div>
+                <div  style="float: left; width: 23%;">
+                 <p style="font-size:x-small">3 days ago</p>
+                 </div>
+                 <br>
+                 <br>
+                 <p>
+                   Donec id elit non mi porta gravida at eget metus. 
+Maecenas sed diam eget risus varius blandit.
+                 </p><br>
+                 <p style="font-size: small; color:gray;">Donec id elit non mi porta</p>
+              </div>
+            </td>
+          </tr>
+           </table>
+
+      </div>
+    </div>
+  </section>
+  <section class="tables" id="tables">
+    <p class="title">Table</p>
+
+   
+    <hr />
+   
+    <table class="tabletable">
+      <tr  >
+        <th class="tabletd" style="text-align: start; font-weight: bold;">#</th>
+        <th  class="tabletd"  style="text-align: start;">First</th>
+        <th  class="tabletd"  style="text-align: start;">Last</th>
+        <th  class="tabletd" style="text-align: start;" >Handle</th>
+      </tr>
+      <tr class="tabletr">
+        <td  class="tabletd " style="font-weight: bold;">1</td>
+        <td  class="tabletd">Mark</td>
+        <td  class="tabletd">Otto</td>
+        <td  class="tabletd">@mdo</td>    
+      </tr>
+      <tr>
+        <td  class="tabletd" style="font-weight: bold;">2</td>
+        <td  class="tabletd">Jacob</td>
+        <td  class="tabletd">Thornton</td>
+        <td  class="tabletd">@fat</td>    
+      </tr>
+      <tr class="tabletr">
+        <td  class="tabletd" style="font-weight: bold;">3</td>
+        <td  class="tabletd">Larry</td>
+        <td  class="tabletd">the bird</td>
+        <td  class="tabletd">@twitter</td>    
+      </tr>
+    </table>
+    <br>
+    <div style="float: right;" >
+      <td><button class="paging b5">Prev</button></td>
+      <td><button class="paging " style="background-color:  #7749f8; color: wheat;">1</button></td>
+      <td><button class="paging b5">2</button></td>
+      <td><button class="paging b5">3</button></td>
+      <td><button class="paging b5">Next</button></td>
+     
+    </div>
+  </section>
+  <br>
+  <br>
+  <section class="card" id="card">
+    <p class="title">Card</p>
+
+    <hr />
+     <div class="cardrow" >
+       <div class="cardshape">
+         <div class="cardhead">
+           <div class="cardhead1">
+             <div class="imgcircle1"></div>
+          
+           </div>
+           <div class="cardhead1">
+             <p class="textstyle1">Stuar Manson</p>
+             <p class="textstyle2">Publicado hace 2 </p>
+             <p class="textstyle2">horas</p>
+           </div>
+           <div  class="cardhead1" style="float: right;">
+            <i class="fa fa-caret-down" aria-hidden="true"></i>
+           </div>
+
+         </div>
+         <img src="Assets/Images/Images1.png" alt="Image not found" height="170px" width="270">
+         <div>
+         <div class="cardhead1">
+          <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+         </div>
+         <div class="cardhead1" style="margin-left: 80px;">
+          <i class="fa fa-comment-o" aria-hidden="true"></i>
+         </div>
+         <div class="cardhead1" style="float: right;">
+          <i class="fa fa-share" aria-hidden="true"></i>
+         </div></div>
+         <div  style="clear:left; border-top: 1px solid  rgb(247, 240, 300); margin: 10px;" >
+         <div class="cardhead1">
+          <div class="imgcircle1"></div>
+         </div>
+         <div class="cardhead1" >
+          <input type="text" placeholder=" Enter your comment" style="height: 30px; border-radius: 10px; border:1px solid gray;" >
+         </div>
+         </div>
+       </div>
+
+       <div class="cardshape" style="height: 300px;">
+        <img src="Assets/Images/Images2.png" alt="Image not found" height="200px" width="270">
+        <div class="posicon">
+          <i class="fa fa-play-circle fa-3x" style="color:#28A745" aria-hidden="true"></i>
+        </div>
+        <p style="font-size: medium; text-align: center;">
+          Meditaciones en casa
+        </p >
+        <p style="font-size: medium; text-align: center;">Susan Paz</p>
+       </div>
+
+       <div class="cardshape">
+         <button class="button" style="margin-left: 10px; background-color: #28A745;">Home</button>
+       <p class="textstyle1" style="padding-left: 10px;">Lampara Look</p>
+       <p class="textstyle2" style="padding-left: 10px;"> by Saca Tuera</p>
+       <br>
+       <img src="Assets/Images/Images.png" alt="Image not found" height="180px" width="270">
+       <div class="cardhead1" style="padding:5px">
+        <div class="imgcircle1"></div>
+       </div>
+       <div class="cardhead1" >
+        <p class="textstyle1" >Felipe Sacudon</p>
+       </div>
+       <div class="cardhead1">
+        <i class="fa fa-comment-o" aria-hidden="true">22</i>
+       </div>
+       <div class="cardhead1">
+        <i class="fa fa-heart"  aria-hidden="true">20</i>
+       </div>
+       </div>
+     </div>
+     <br>
+     <br>
+  </section>
+</body>
+
+</html>

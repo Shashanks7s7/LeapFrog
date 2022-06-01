@@ -1,0 +1,533 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Inter";
+}
+header {
+  padding: 20px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+}
+
+nav {
+  overflow: hidden;
+  padding-top: 20px;
+}
+.logo {
+  float: left;
+  margin-right: 60px;
+  text-align: center;
+
+  margin-left: 129px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: #000000;
+}
+
+li a {
+  padding: 0px 19px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration: none;
+  /* identical to box height, or 114% */
+
+  /* Secondary/color */
+
+  color: #6c757d;
+}
+.navlist {
+  float: left;
+  list-style-type: none;
+  overflow: hidden;
+  width: 100%;
+}
+.navlist li {
+  display: inline;
+
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 114% */
+
+  /* Secondary/color */
+
+  color: #6c757d;
+}
+.form {
+  float: right;
+  vertical-align: top;
+  margin-right: 20px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+.search {
+  width: 154px;
+  height: 38px;
+  vertical-align: top;
+  background: #ffffff;
+  /* Stroke/light */
+
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  border: 1px grey solid;
+  border-radius: 8px;
+}
+.searchtxt {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  vertical-align: top;
+
+  color: #abb5be;
+}
+.outlinebutton {
+  vertical-align: top;
+  width: 71px;
+  height: 37px;
+  border: 1px solid #28a745;
+  border-radius: 4px;
+}
+.color {
+  max-width: 1000;
+  padding: 0px 165px;
+  height: auto;
+}
+.title {
+  width: 190px;
+  height: 48px;
+  margin-top: 32px;
+  /* Bold / H1 Heading */
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+
+  /* Heading/Title Color */
+
+  color: #152536;
+}
+hr {
+  display: block;
+  margin-top: 32px;
+}
+.primarycolorr {
+  height: auto;
+  width: 1000px;
+  margin-top: 54px;
+}
+
+.subtitle {
+  width: 413px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  margin-bottom: 27px;
+  line-height: 39px;
+  /* identical to box height */
+
+  /* Heading/Title Color */
+
+  color: #152536;
+}
+.subtitle1 {
+  font-size: 25px;
+  font-weight: bolder;
+  margin: 10px 0px;
+}
+.textstylecolorcontainer {
+  margin-top: 13px;
+  width: 120px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+
+  /* Dark */
+
+  color: #343a40;
+}
+.textstylecolorcode {
+  width: 51px;
+  margin-top: 4px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #6b7176;
+}
+.containerview {
+  float: left;
+  width: 166px;
+  height: 123px;
+  margin-bottom: 40px;
+  margin-right: 24px;
+}
+.colorcontainer {
+  height: 72px;
+  width: 166px;
+  border-radius: 8px;
+}
+.primarycolorr .secondarycolorr {
+  display: inline-block;
+}
+.tabnav {
+  width: 255;
+  border-bottom: 1px solid #dee2e6;
+  margin: 20px 2px;
+  overflow: hidden;
+}
+.typography {
+  clear: left;
+  max-width: 1000;
+  padding: 0px 165px;
+  height: auto;
+}
+.tab {
+  height: auto;
+  width: 1000px;
+  margin-top: 24px;
+}
+.tablinks {
+  box-sizing: border-box;
+
+  width: 90px;
+  height: 40px;
+
+  /* Stroke/light */
+
+  border: 1px solid #dee2e6;
+  border-radius: 4px 4px 0px 0px;
+}
+.tabtext {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height, or 150% */
+
+  /* Secondary/color */
+
+  color: #6c757d;
+}
+.tabsss {
+  margin: 20px 2px;
+
+  width: 621px;
+}
+.tabcontent {
+  width: 611px;
+  height: 168px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  /* or 175% */
+
+  /* Body Text / Base Color */
+
+  color: #68717a;
+}
+.buttonclass {
+    max-width: 1000;
+    padding: 0px 165px;
+    height: auto;
+}
+
+.butn{
+    height: auto;
+    width: 1000px;
+    margin-top: 24px;
+}
+    .headertextstyle{
+        font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 28px;
+/* identical to box height, or 175% */
+
+
+/* Body Text Color */
+
+color: #6B7176;
+
+    }
+    .button {
+        background-color: #7749f8;
+        border: none;
+        color: white;
+        padding: 12px 25px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+      .outlinebutton{
+        width: 100px;
+        height: 42px;
+        border: 1px solid  #7749f8 ;
+        background-color: white;
+       
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        padding: 12px 25px;
+        color:  #7749f8;
+        cursor: pointer;
+      }
+      .button:hover{
+          opacity: 80%;
+      }
+      .b1{
+          border:1px solid #54595E;
+          color: #54595E;
+      }
+      .b2{
+          background-color: 
+          #7749F8;color: white;
+      }
+      .b3{
+          background-color: #393E46;
+      }
+      .b4{
+          background-color:#54595E ;
+      }
+      .b5{
+        border:1px solid #54595E;
+        color: #5227CC;
+    }
+    table, th,td{
+        margin-left: 0px;
+        margin-right:  84px;
+        padding: 20px;
+    }
+    .formclass{
+    
+        clear: left;
+        max-width: 1000;
+        padding: 0px 165px;
+        height: auto;
+    }
+    .formcol1{
+        margin-top: 51px;
+        float: left;
+        width: 25%;
+      
+    }
+    
+    .contenttable{
+    border-collapse: collapse;margin-left:80px;margin-top: 0px;
+}
+.inputtypetext1{
+    width: 300px;
+    padding: 9px 16px;
+    border:1px solid #ABB5BE;
+    border-radius: 3px;
+    font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 21px;
+/* identical to box height, or 131% */
+
+
+/* Secondary/Light Color */
+
+color: #ABB5BE;
+   }
+   .checkboxtable{
+     margin:  2px 0px;
+     padding: 0px;
+   }
+   
+ .formcol2{
+     float: right;
+     width: 70%;
+     margin-bottom: 40px;
+     
+     
+ }
+ .contenttable{
+     border-collapse: collapse;margin-left:80px;margin-top: 0px;
+ }
+ .componentstable{
+  border-collapse: collapse;margin: 0px;line-height: 4px;
+ }
+ .comptd{
+ border: 1px solid #DEE2E6;;
+ width:300px;
+ 
+ }
+ .listgroup{
+         
+         clear:right;
+     
+        max-width: 1000;
+        padding: 0px 165px;
+        height: auto;
+      
+    
+ }
+ .checkboxtable{
+    margin:  2px 0px;
+    padding: 0px;
+  }
+  .cbtext1{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    width: 180px;
+    /* identical to box height, or 131% */
+    
+    
+    /* Heading/Title Color */
+    
+    
+  }
+  .cbtext2{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    /* identical to box height, or 100% */
+    vertical-align:middle; 
+    
+    /* Heading/Title Color */
+    
+    color: #152536;
+  }
+  .customcol{
+    margin-top: 54px;
+        float: left;
+        width: 58%;
+        
+    
+  }
+  /* /////////////////////////////// */
+  .tables{
+    clear: left;
+    max-width: 1000;
+    padding: 0px 165px;
+    height: auto;
+}
+.tabletable{
+    margin: 0;
+    margin-top: 60px;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: start;
+    padding: 20px;
+    border: 1px solid;
+    border-top-color: #DEE2E6;
+    border-bottom-color: #DEE2E6;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    line-height: 0px;
+ 
+}
+
+.tabletd{
+    border: 1px solid ;
+    border-top-color: #DEE2E6;
+    border-bottom-color: #DEE2E6;
+    border-left-color: transparent;
+    border-right-color: transparent;
+
+}
+.tabletr:nth-child(even) {
+    background-color: #F8F9FA;;
+    
+}
+
+.paging {
+    padding: 12px 17px; 
+    border: 1px solid  #7749f8 ;
+    background-color: white;
+   
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    color:  #7749f8;
+    cursor: pointer;
+  
+}
+.card{
+    max-width: 1000;
+    padding: 0px 165px;
+    height: auto;
+}
+.cardrow{
+    margin-top: 68px;
+    height: auto;
+}
+.cardshape{
+    margin: 20px;
+    float: left;
+    width: 270px;
+    height: 340px;
+    box-shadow: 3px 3px 3px grey;
+    border: 1px hidden grey;
+    border-radius: 10px;
+
+}
+.cardhead1{
+    float: left;
+    padding: 8px;
+
+}
+.imgcircle1{
+    width: 30px;
+    height:30px;
+    background-size: cover;
+    display: block;
+     border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    float: left;
+ 
+    background-image: url('https://thumbs.dreamstime.com/b/cristiano-ronaldo-torino-italy-april-cristiano-ronaldo-juventus-fc-serie-match-juventus-fc-ssc-napoli-215614706.jpg');
+   }
+   .textstyle1{
+       font-size: 14px;
+   }
+   .textstyle2{
+       font-size: medium;
+       color: grey;
+   }
+   .posicon{
+       position:relative;
+       left: 120px;
+       bottom: 25px;
+   }
+   .butn{
+       margin: 0px;
+       padding: 0px;
+   }
+  
