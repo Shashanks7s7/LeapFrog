@@ -246,288 +246,273 @@ hr {
   color: #68717a;
 }
 .buttonclass {
-    max-width: 1000;
-    padding: 0px 165px;
-    height: auto;
+  max-width: 1000;
+  padding: 0px 165px;
+  height: auto;
 }
 
-.butn{
-    height: auto;
-    width: 1000px;
-    margin-top: 24px;
+.butn {
+  height: auto;
+  width: 1000px;
+  margin-top: 24px;
 }
-    .headertextstyle{
-        font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 28px;
-/* identical to box height, or 175% */
+.headertextstyle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  /* identical to box height, or 175% */
 
+  /* Body Text Color */
 
-/* Body Text Color */
-
-color: #6B7176;
-
-    }
-    .button {
-        background-color: #7749f8;
-        border: none;
-        color: white;
-        padding: 12px 25px;
-        text-align: center;
-        text-decoration: none;
-        border-radius: 5px;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-      }
-
-      .outlinebutton{
-        width: 100px;
-        height: 42px;
-        border: 1px solid  #7749f8 ;
-        background-color: white;
-       
-        text-align: center;
-        text-decoration: none;
-        border-radius: 5px;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        padding: 12px 25px;
-        color:  #7749f8;
-        cursor: pointer;
-      }
-      .button:hover{
-          opacity: 80%;
-      }
-      .b1{
-          border:1px solid #54595E;
-          color: #54595E;
-      }
-      .b2{
-          background-color: 
-          #7749F8;color: white;
-      }
-      .b3{
-          background-color: #393E46;
-      }
-      .b4{
-          background-color:#54595E ;
-      }
-      .b5{
-        border:1px solid #54595E;
-        color: #5227CC;
-    }
-    table, th,td{
-        margin-left: 0px;
-        margin-right:  84px;
-        padding: 20px;
-    }
-    .formclass{
-    
-        clear: left;
-        max-width: 1000;
-        padding: 0px 165px;
-        height: auto;
-    }
-    .formcol1{
-        margin-top: 51px;
-        float: left;
-        width: 25%;
-      
-    }
-    
-    .contenttable{
-    border-collapse: collapse;margin-left:80px;margin-top: 0px;
+  color: #6b7176;
 }
-.inputtypetext1{
-    width: 300px;
-    padding: 9px 16px;
-    border:1px solid #ABB5BE;
-    border-radius: 3px;
-    font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 21px;
-/* identical to box height, or 131% */
-
-
-/* Secondary/Light Color */
-
-color: #ABB5BE;
-   }
-   .checkboxtable{
-     margin:  2px 0px;
-     padding: 0px;
-   }
-   
- .formcol2{
-     float: right;
-     width: 70%;
-     margin-bottom: 40px;
-     
-     
- }
- .contenttable{
-     border-collapse: collapse;margin-left:80px;margin-top: 0px;
- }
- .componentstable{
-  border-collapse: collapse;margin: 0px;line-height: 4px;
- }
- .comptd{
- border: 1px solid #DEE2E6;;
- width:300px;
- 
- }
- .listgroup{
-         
-         clear:right;
-     
-        max-width: 1000;
-        padding: 0px 165px;
-        height: auto;
-      
-    
- }
- .checkboxtable{
-    margin:  2px 0px;
-    padding: 0px;
-  }
-  .cbtext1{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 21px;
-    width: 180px;
-    /* identical to box height, or 131% */
-    
-    
-    /* Heading/Title Color */
-    
-    
-  }
-  .cbtext2{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 12px;
-    /* identical to box height, or 100% */
-    vertical-align:middle; 
-    
-    /* Heading/Title Color */
-    
-    color: #152536;
-  }
-  .customcol{
-    margin-top: 54px;
-        float: left;
-        width: 58%;
-        
-    
-  }
-  /* /////////////////////////////// */
-  .tables{
-    clear: left;
-    max-width: 1000;
-    padding: 0px 165px;
-    height: auto;
-}
-.tabletable{
-    margin: 0;
-    margin-top: 60px;
-    border-collapse: collapse;
-    width: 100%;
-    text-align: start;
-    padding: 20px;
-    border: 1px solid;
-    border-top-color: #DEE2E6;
-    border-bottom-color: #DEE2E6;
-    border-left-color: transparent;
-    border-right-color: transparent;
-    line-height: 0px;
- 
+.button {
+  background-color: #7749f8;
+  border: none;
+  color: white;
+  padding: 12px 25px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
-.tabletd{
-    border: 1px solid ;
-    border-top-color: #DEE2E6;
-    border-bottom-color: #DEE2E6;
-    border-left-color: transparent;
-    border-right-color: transparent;
+.outlinebutton {
+  width: 100px;
+  height: 42px;
+  border: 1px solid #7749f8;
+  background-color: white;
 
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  padding: 12px 25px;
+  color: #7749f8;
+  cursor: pointer;
+}
+.button:hover {
+  opacity: 80%;
+}
+.b1 {
+  border: 1px solid #54595e;
+  color: #54595e;
+}
+.b2 {
+  background-color: #7749f8;
+  color: white;
+}
+.b3 {
+  background-color: #393e46;
+}
+.b4 {
+  background-color: #54595e;
+}
+.b5 {
+  border: 1px solid #54595e;
+  color: #5227cc;
+}
+table,
+th,
+td {
+  margin-left: 0px;
+  margin-right: 84px;
+  padding: 20px;
+}
+.formclass {
+  clear: left;
+  max-width: 1000;
+  padding: 0px 165px;
+  height: auto;
+}
+.formcol1 {
+  margin-top: 51px;
+  float: left;
+  width: 25%;
+}
+
+.contenttable {
+  border-collapse: collapse;
+  margin-left: 80px;
+  margin-top: 0px;
+}
+.inputtypetext1 {
+  width: 300px;
+  padding: 9px 16px;
+  border: 1px solid #abb5be;
+  border-radius: 3px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  /* identical to box height, or 131% */
+
+  /* Secondary/Light Color */
+
+  color: #abb5be;
+}
+.checkboxtable {
+  margin: 2px 0px;
+  padding: 0px;
+}
+
+.formcol2 {
+  float: right;
+  width: 70%;
+  margin-bottom: 40px;
+}
+.contenttable {
+  border-collapse: collapse;
+  margin-left: 80px;
+  margin-top: 0px;
+}
+.componentstable {
+  border-collapse: collapse;
+  margin: 0px;
+  line-height: 4px;
+}
+.comptd {
+  border: 1px solid #dee2e6;
+  width: 300px;
+}
+.listgroup {
+  clear: right;
+
+  max-width: 1000;
+  padding: 0px 165px;
+  height: auto;
+}
+.checkboxtable {
+  margin: 2px 0px;
+  padding: 0px;
+}
+.cbtext1 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  width: 180px;
+  /* identical to box height, or 131% */
+
+  /* Heading/Title Color */
+}
+.cbtext2 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height, or 100% */
+  vertical-align: middle;
+
+  /* Heading/Title Color */
+
+  color: #152536;
+}
+.customcol {
+  margin-top: 54px;
+  float: left;
+  width: 58%;
+}
+/* /////////////////////////////// */
+.tables {
+  clear: left;
+  max-width: 1000;
+  padding: 0px 165px;
+  height: auto;
+}
+.tabletable {
+  margin: 0;
+  margin-top: 60px;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: start;
+  padding: 20px;
+  border: 1px solid;
+  border-top-color: #dee2e6;
+  border-bottom-color: #dee2e6;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  line-height: 0px;
+}
+
+.tabletd {
+  border: 1px solid;
+  border-top-color: #dee2e6;
+  border-bottom-color: #dee2e6;
+  border-left-color: transparent;
+  border-right-color: transparent;
 }
 .tabletr:nth-child(even) {
-    background-color: #F8F9FA;;
-    
+  background-color: #f8f9fa;
 }
 
 .paging {
-    padding: 12px 17px; 
-    border: 1px solid  #7749f8 ;
-    background-color: white;
-   
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    color:  #7749f8;
-    cursor: pointer;
-  
-}
-.card{
-    max-width: 1000;
-    padding: 0px 165px;
-    height: auto;
-}
-.cardrow{
-    margin-top: 68px;
-    height: auto;
-}
-.cardshape{
-    margin: 20px;
-    float: left;
-    width: 270px;
-    height: 340px;
-    box-shadow: 3px 3px 3px grey;
-    border: 1px hidden grey;
-    border-radius: 10px;
+  padding: 12px 17px;
+  border: 1px solid #7749f8;
+  background-color: white;
 
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  color: #7749f8;
+  cursor: pointer;
 }
-.cardhead1{
-    float: left;
-    padding: 8px;
+.card {
+  max-width: 1000;
+  padding: 0px 165px;
+  height: auto;
+}
+.cardrow {
+  margin-top: 68px;
+  height: auto;
+}
+.cardshape {
+  margin: 20px;
+  float: left;
+  width: 270px;
+  height: 340px;
+  box-shadow: 3px 3px 3px grey;
+  border: 1px hidden grey;
+  border-radius: 10px;
+}
+.cardhead1 {
+  float: left;
+  padding: 8px;
+}
+.imgcircle1 {
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  display: block;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  float: left;
 
+  background-image: url("https://thumbs.dreamstime.com/b/cristiano-ronaldo-torino-italy-april-cristiano-ronaldo-juventus-fc-serie-match-juventus-fc-ssc-napoli-215614706.jpg");
 }
-.imgcircle1{
-    width: 30px;
-    height:30px;
-    background-size: cover;
-    display: block;
-     border-radius: 100px;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-    float: left;
- 
-    background-image: url('https://thumbs.dreamstime.com/b/cristiano-ronaldo-torino-italy-april-cristiano-ronaldo-juventus-fc-serie-match-juventus-fc-ssc-napoli-215614706.jpg');
-   }
-   .textstyle1{
-       font-size: 14px;
-   }
-   .textstyle2{
-       font-size: medium;
-       color: grey;
-   }
-   .posicon{
-       position:relative;
-       left: 120px;
-       bottom: 25px;
-   }
-   .butn{
-       margin: 0px;
-       padding: 0px;
-   }
-  
+.textstyle1 {
+  font-size: 14px;
+}
+.textstyle2 {
+  font-size: medium;
+  color: grey;
+}
+.posicon {
+  position: relative;
+  left: 120px;
+  bottom: 25px;
+}
+.butn {
+  margin: 0px;
+  padding: 0px;
+}
