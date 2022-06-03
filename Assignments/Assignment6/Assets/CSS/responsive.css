@@ -1,0 +1,59 @@
+@media only screen and (max-width: 500px) {
+  .headerlist {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .headerlist__logo {
+    font-size: 22px;
+    line-height: 20px;
+
+    text-align: center;
+    margin: 0 auto;
+  }
+  .headerlist__navlist {
+    display: none;
+  }
+  nav {
+    float: none;
+    display: none;
+  }
+  header {
+    width: 600px;
+  }
+  .headerlist__menuimage {
+    float: right;
+    height: 30px;
+    width: 30px;
+    margin-right: 80px;
+   
+    display: block;
+    cursor: pointer;
+  }
+  .hamburger {
+    position: fixed;
+    z-index: 80;
+    top: 1rem;
+    right: 1rem;
+    padding: 4px;
+    border: black solid 1px;
+    background: white;
+    cursor: pointer;
+  }
+  .headerlist__navlist{
+    
+    position: fixed;
+    transform: translateY(-100%);
+    transition: transform 0.2s;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background: black;
+    color: white;
+    list-style: none;
+    padding-top: 4rem;
+      
+  }
+  
+}

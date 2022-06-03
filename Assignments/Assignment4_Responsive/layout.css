@@ -1,14 +1,13 @@
-nav{
-
-padding: 20px;
+nav {
+  padding: 20px;
 }
-footer{
-  height: 56px;  
-    position: absolute;
-left: 0%;
-right: 0%;
-top: 390%;
-bottom: 0%;
+footer {
+  height: 56px;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 390%;
+  bottom: 0%;
 
-background: #23222F;
+  background: #23222f;
 }

@@ -1,136 +1,119 @@
+@media only screen and (max-width: 384px) {
+  .logo {
+    float: none;
+    padding: 5px 15px;
+    height: 1%;
+    display: solid;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12vmin;
 
-@media only screen  and (max-width: 384px) {
-    .logo {
-      float: none;
-      padding: 5px 15px;
-      height: 1%;
-      display: solid;
-      font-family: "Poppins";
-      font-style: normal;
-      font-weight: 600;
-      font-size: 12vmin;
-  
-     
-  
-      color: #4e42d9;
-    }
-    nav{
-
-      padding: 10px;
-      }
-     
-    .navlist {
-      float: none;
-      list-style-type: none;
-      overflow: hidden;
-      padding: 0px 10px;
-    }
-    .navlist li {
-        margin-bottom: 5px;
-      display: block;
-      padding: 2px 5px;
-      align-content: center;
-      width: 60%;
-      height: 2%;
-      
-    }
-    .navlist li a {
-      font-family: "Poppins";
-      font-style: normal;
-      font-weight: 600;
-      font-size: 8vmin;
-      line-height: 2vmin;
-    
-      color: #797979;
-      text-decoration: none;
-    }
-    .butnnav {
-      background-color: #4e42d9;
-      font-family: "Poppins";
-      font-style: normal;
-      font-weight: 600;
-      font-size: 5vmin;
-      line-height: 60%;
-  
-      border: none;
-  
-      color: #ffffff;
-  
-      border-radius: 4px;
-      text-align: center;
-      text-decoration: none;
-      padding: 10px 10px;
-  
-      width: 80%;
-      height: 0.5%;
-      cursor: pointer;
-      margin-top: 0px;
-    }
-    .homemain {
-      height: 500px;
-      width: 40px;
-      padding: 10px;
-     margin-left:10 px;
-   
-    }
-    
-  
-    .homecol1 {
-     
-  
-     height: 300px;
-     width: 100%;
-     padding: 0px 5px;
-     
-    }
-    .textstyletitle {
-      font-family: "Poppins";
-  
-     
-      font-size: 10vmin;
-      width:600px ;
-    
-   height: 140px;
-         text-align: center;
-    }
-    .textstylesubtitle {
-      font-size: 5vmin;
-      color: grey;
-      padding: 1px;
-      width: 600px;
-      height: 10px;
-      margin-top: 2px;
-      text-align: center;
- 
+    color: #4e42d9;
   }
-  .buttonrow{
-      margin-left: 60px;
-      width: 600px;
+  nav {
+    padding: 10px;
+  }
+
+  .navlist {
+    float: none;
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0px 10px;
+  }
+  .navlist li {
+    margin-bottom: 5px;
+    display: block;
+    padding: 2px 5px;
+    align-content: center;
+    width: 60%;
+    height: 2%;
+  }
+  .navlist li a {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 8vmin;
+    line-height: 2vmin;
+    color: #797979;
+    text-decoration: none;
+  }
+  .butnnav {
+    background-color: #4e42d9;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 5vmin;
+    line-height: 60%;
+    border: none;
+    color: #ffffff;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 10px;
+    width: 80%;
+    height: 0.5%;
+    cursor: pointer;
+    margin-top: 0px;
+  }
+  .homemain {
+    height: 500px;
+    width: 40px;
+    padding: 10px;
+    margin-left: 10 px;
+  }
+
+  .homecol1 {
+    height: 300px;
+    width: 100%;
+    padding: 0px 5px;
+  }
+  .textstyletitle {
+    font-family: "Poppins";
+    font-size: 10vmin;
+    width: 600px;
+    height: 140px;
+    text-align: center;
+  }
+  .textstylesubtitle {
+    font-size: 5vmin;
+    color: grey;
+    padding: 1px;
+    width: 600px;
+    height: 10px;
+    margin-top: 2px;
+    text-align: center;
+  }
+  .buttonrow {
+    margin-left: 60px;
+    width: 600px;
     padding: 1px 20px;
     align-content: center;
     height: 100px;
   }
-  .buttonmain1.buttonmain{
-    float:  left; margin-left: 55px;
+  .buttonmain1.buttonmain {
+    float: left;
+    margin-left: 55px;
   }
   .homecol2 {
     padding-left: 0px;
-   display:none;
+    display: none;
     width: 0px;
     height: 0px;
   }
-  .subt{
-   float:none; width: 500px; height: 216px; margin-top: 20px;
+  .subt {
+    float: none;
+    width: 500px;
+    height: 216px;
+    margin-top: 20px;
   }
-  
+
   .cardlist {
-      clear: left;
-   
+    clear: left;
     padding: 0px;
-   width: 600px;
+    width: 600px;
     height: 1200px;
-  margin-top: 200px;
-  
+    margin-top: 200px;
   }
   .whatwedo {
     height: 15px;
@@ -142,11 +125,11 @@
     font-weight: 700;
     font-size: 12vmin;
     line-height: 10px;
-   letter-spacing: 0.01em;
+    letter-spacing: 0.01em;
     color: #3b3950;
   }
   .card {
-   margin: 30px 0px;
+    margin: 30px 0px;
     width: 600px;
     height: 216px;
     align-items: center;
@@ -157,8 +140,7 @@
     height: 100px;
     left: 100px;
     top: 0px;
-    
-    
+
     border-radius: 20px;
   }
   .blog {
@@ -174,33 +156,27 @@
     font-weight: 600;
     font-size: 32px;
     color: #3b3950;
-  
     background: #f8f8f3;
   }
   .blogmain {
     align-items: center;
     padding: 0px;
-   
-  
     position: absolute;
     width: 600px;
     height: 620px;
-   
     top: 12px;
   }
   .blogheading {
     position: absolute;
     display: inline;
-    left:1px;
+    left: 1px;
     width: 600px;
     height: 101px;
     align-items: center;
-   
   }
   .blogtitle {
     width: 100px;
     height: 45px;
-    
     font-family: "Poppins";
     font-style: normal;
     font-weight: 600;
@@ -219,39 +195,29 @@
     font-weight: 400;
     font-size: 7vmin;
     line-height: 2px;
-  
     text-align: center;
-  
-  
-    /* Body / Paragraph */
-  
     color: #797979;
   }
   .bloglist {
     padding: 0px;
-  
     position: absolute;
-  
     height: 1500px;
     left: 5px;
     top: 140px;
   }
   .blogcard {
     margin: 0px 20px;
-  
-
     height: 450px;
     width: 400.67px;
     margin-bottom: 40px;
   }
-  .blogcard1{
+  .blogcard1 {
     margin-left: 10px;
   }
   .img {
     width: 400.67px;
     height: 281px;
     border-radius: 4px;
- 
     object-fit: fill;
     background-position: center;
     background-size: cover;
@@ -260,32 +226,24 @@
     margin-top: 12px;
     width: 129px;
     height: 20px;
-  
     font-family: "Poppins";
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 140%;
     text-align: start;
-  
     color: #797979;
   }
   .blogt1 {
     margin: 12px 0px;
-
     width: 500px;
     height: 40px;
-  
     font-family: "Poppins";
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 130%;
-    /* or 25px */
-  
     letter-spacing: 0.01em;
-  
-    /* Body / Title */
     text-align: start;
     color: #3b3950;
   }
@@ -293,22 +251,17 @@
     margin-top: 8px;
     width: 500.67px;
     height: 120px;
-  
     font-family: "Poppins";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
     text-align: start;
-    /* or 24px */
-  
     letter-spacing: 0.01em;
-  
     color: #797979;
   }
   .viewbutton {
     padding: 16px 30px;
-  
     position: absolute;
     width: 125px;
     height: 50px;
@@ -321,25 +274,19 @@
   .viewbuttontext {
     width: 65px;
     height: 18px;
-  
     font-family: "Poppins";
     font-style: normal;
     font-weight: 700;
     font-size: 10vmin;
     line-height: 110%;
-  
     color: #ffffff;
   }
 
-  footer{
-    height: 56px;  
-      position: absolute;
-  
-
-  bottom: 0px;
-  top: 2000px;
-  
-  background: #23222F;
+  footer {
+    height: 56px;
+    position: absolute;
+    bottom: 0px;
+    top: 2000px;
+    background: #23222f;
   }
-
 }

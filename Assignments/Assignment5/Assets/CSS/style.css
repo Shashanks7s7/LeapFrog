@@ -12,14 +12,15 @@ header {
 
 nav {
   overflow: hidden;
-  padding-top: 20px;
+  margin-top: 5px;
+  float: left;
 }
 .logo {
   float: left;
   margin-right: 60px;
-  text-align: center;
-
   margin-left: 129px;
+  text-align: center;
+  margin-top: 5px;
   font-style: normal;
   font-weight: 800;
   font-size: 20px;
@@ -27,19 +28,20 @@ nav {
 
   color: #000000;
 }
+.navlist{
+  max-width: 1200px;
+  margin: 0px auto;
+
+}
 
 li a {
-  padding: 0px 19px;
+  padding: 10px 19px;
   text-align: center;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
   text-decoration: none;
-  /* identical to box height, or 114% */
-
-  /* Secondary/color */
-
   color: #6c757d;
 }
 .navlist {
@@ -50,32 +52,25 @@ li a {
 }
 .navlist li {
   display: inline;
-
   text-align: center;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
-  /* identical to box height, or 114% */
-
-  /* Secondary/color */
-
   color: #6c757d;
 }
 .form {
   float: right;
-  vertical-align: top;
   margin-right: 20px;
   margin-bottom: 0px;
   padding-bottom: 0px;
+  margin-top: 0px;
 }
 .search {
   width: 154px;
-  height: 38px;
+  height: 43px;
   vertical-align: top;
   background: #ffffff;
-  /* Stroke/light */
-
   border: 1px solid #dee2e6;
   border-radius: 4px;
   border: 1px grey solid;
@@ -87,17 +82,10 @@ li a {
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
-  vertical-align: top;
-
+  
   color: #abb5be;
 }
-.outlinebutton {
-  vertical-align: top;
-  width: 71px;
-  height: 37px;
-  border: 1px solid #28a745;
-  border-radius: 4px;
-}
+
 .color {
   max-width: 1000;
   padding: 0px 165px;
@@ -107,17 +95,12 @@ li a {
   width: 190px;
   height: 48px;
   margin-top: 32px;
-  /* Bold / H1 Heading */
-
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: 40px;
   line-height: 48px;
   letter-spacing: -0.02em;
-
-  /* Heading/Title Color */
-
   color: #152536;
 }
 hr {
@@ -138,10 +121,6 @@ hr {
   font-size: 32px;
   margin-bottom: 27px;
   line-height: 39px;
-  /* identical to box height */
-
-  /* Heading/Title Color */
-
   color: #152536;
 }
 .subtitle1 {
@@ -156,20 +135,15 @@ hr {
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
-
-  /* Dark */
-
   color: #343a40;
 }
 .textstylecolorcode {
   width: 51px;
   margin-top: 4px;
-
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
-
   color: #6b7176;
 }
 .containerview {
@@ -206,12 +180,8 @@ hr {
 }
 .tablinks {
   box-sizing: border-box;
-
   width: 90px;
   height: 40px;
-
-  /* Stroke/light */
-
   border: 1px solid #dee2e6;
   border-radius: 4px 4px 0px 0px;
 }
@@ -221,15 +191,10 @@ hr {
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
-  /* identical to box height, or 150% */
-
-  /* Secondary/color */
-
   color: #6c757d;
 }
 .tabsss {
   margin: 20px 2px;
-
   width: 621px;
 }
 .tabcontent {
@@ -239,10 +204,6 @@ hr {
   font-weight: 400;
   font-size: 16px;
   line-height: 28px;
-  /* or 175% */
-
-  /* Body Text / Base Color */
-
   color: #68717a;
 }
 .buttonclass {
@@ -261,10 +222,6 @@ hr {
   font-weight: 400;
   font-size: 16px;
   line-height: 28px;
-  /* identical to box height, or 175% */
-
-  /* Body Text Color */
-
   color: #6b7176;
 }
 .button {
@@ -286,13 +243,12 @@ hr {
   height: 42px;
   border: 1px solid #7749f8;
   background-color: white;
-
   text-align: center;
   text-decoration: none;
   border-radius: 5px;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 0px 2px;
   padding: 12px 25px;
   color: #7749f8;
   cursor: pointer;
@@ -351,10 +307,6 @@ td {
   font-weight: 400;
   font-size: 16px;
   line-height: 21px;
-  /* identical to box height, or 131% */
-
-  /* Secondary/Light Color */
-
   color: #abb5be;
 }
 .checkboxtable {
@@ -398,20 +350,13 @@ td {
   font-size: 16px;
   line-height: 21px;
   width: 180px;
-  /* identical to box height, or 131% */
-
-  /* Heading/Title Color */
 }
 .cbtext2 {
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 12px;
-  /* identical to box height, or 100% */
   vertical-align: middle;
-
-  /* Heading/Title Color */
-
   color: #152536;
 }
 .customcol {
@@ -419,7 +364,7 @@ td {
   float: left;
   width: 58%;
 }
-/* /////////////////////////////// */
+
 .tables {
   clear: left;
   max-width: 1000;
@@ -456,7 +401,6 @@ td {
   padding: 12px 17px;
   border: 1px solid #7749f8;
   background-color: white;
-
   text-align: center;
   text-decoration: none;
   border-radius: 5px;
@@ -497,7 +441,6 @@ td {
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
   float: left;
-
   background-image: url("https://thumbs.dreamstime.com/b/cristiano-ronaldo-torino-italy-april-cristiano-ronaldo-juventus-fc-serie-match-juventus-fc-ssc-napoli-215614706.jpg");
 }
 .textstyle1 {
