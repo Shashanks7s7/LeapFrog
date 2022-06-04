@@ -43,7 +43,7 @@
   color: #06c167;
 }
 
-.navlist li:hover a {
+.headerlist__navlist li a:hover{
   color: #06c167;
 }
 .hero {
@@ -350,6 +350,9 @@ color: #1D1D1F;
   width: 233px;
   margin-top: 51px;
 }
+.stars__col1--butn:hover {
+  opacity: 80%;
+}
 .stars__col1--butn-txt{
   font-style: normal;
 font-weight: 400;
@@ -359,6 +362,9 @@ padding-left: 27.41px;
 float: left;
 
 color: #FFFFFF;
+}
+.stars__col1--butn-icon{
+  float: left; padding-left: 15.81px; padding-top: 34px;
 }
 .stars__col1--datarow{
   margin-top: 55px;
@@ -386,6 +392,7 @@ color: #FFFFFF;
 font-weight: 600;
 font-size: 40px;
 line-height: 48px;
+text-align: center;
 
 /* #06C167 */
 
@@ -397,6 +404,7 @@ color: #06C167;
 font-weight: 400;
 font-size: 15px;
 line-height: 18px;
+text-align: center;
 
 color: #1D1D1F;
 
@@ -439,6 +447,9 @@ color: #1D1D1F;
   height: 292.5px;
   
   width: 100%;
+}
+.features__grid--image{
+  float: left;
 }
 .features__img{
   float: left;
@@ -485,11 +496,19 @@ color: #1D1D1F;
 font-weight: 500;
 font-size: 15px;
 line-height: 18px;
-
-/* #06C167 */
-
+cursor:pointer;
 color: #06C167;
+}
+.features_box--butn--icon{
+  float: left; padding-left: 7.78px; padding-top: 18px;
+}
+.features_box--butn--text{
+  float: left; padding-top: 11px;padding-bottom:  13px; padding-left: 14px;
 
+}
+.features_box--butn:hover {
+  opacity: 60%;
+  color: #06C167; 
 }
 .product{
   max-width: 1170px;
@@ -531,6 +550,7 @@ color: #1D1D1F;
   
   float: left;
 }
+
 .product__data1--imf{
   height: 190px;
   width: 190px;
