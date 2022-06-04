@@ -1,0 +1,20 @@
+header {
+  padding: 21px;
+  overflow: hidden;
+  background-color: #f3fcf7;
+}
+nav {
+  overflow: hidden;
+  margin-top: 5px;
+  float: right;
+}
+
+footer {
+  max-width: 1440px;
+  height: 433px;
+  background: #ffffff;
+  padding: 0px 135px;
+  padding-top: 76px;
+  padding-bottom: 148.02px;
+  margin: 0px auto;
+}
