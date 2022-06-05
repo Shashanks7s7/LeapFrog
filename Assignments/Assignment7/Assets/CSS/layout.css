@@ -1,0 +1,19 @@
+header {
+  max-width: 1920px;
+  overflow: hidden;
+  background-color: #fff2e1;
+
+  padding-top: 40px;
+}
+nav {
+  margin-top: 20px;
+  max-width: 2000px;
+}
+footer {
+  height: 593px;
+  max-width: 1920px;
+  margin: 0 auto;
+  margin-top: 160px;
+  background: #252641;
+  padding-top: 74px;
+}
