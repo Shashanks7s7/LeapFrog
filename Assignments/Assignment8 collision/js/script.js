@@ -84,7 +84,7 @@ class Box {
 }
 let ballCollection = [];
 
-for (let i = 0; i < 30; i++) {
+for (let i = 0; i < 50; i++) {
   let radius = getRandom(8, 15);
   let x = getRandom(radius, defaultBoundaryWidth - 3 * radius);
   let y = getRandom(radius, defaultBoundaryHeight - 3 * radius);
@@ -122,10 +122,14 @@ for (let i = 0; i < 30; i++) {
 }
 
 boundary.addEventListener("click", (e) => {
+  console.log(e.x);
+
   for (let i = 0; i < 10; i++) {
     let radius = getRandom(8, 15);
-    let x = getRandom(e.x - 3 * radius, e.x);
-    let y = getRandom(e.y - 3 * radius, e.y);
+    console.log(e.x+", "+e.y);
+    let x = e.offsetX;
+    let y = e.offsetY;
+   
     const ball = new Box(
       y,
       x,
