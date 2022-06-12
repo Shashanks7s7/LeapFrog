@@ -57,9 +57,9 @@ class Box {
     this.element.style.left = topx(this.left);
   }
   borderCollisionCheck() {
-    if (boundarybox.width-4- this.radius * 2 < this.left)
+    if (boundarybox.width-5- this.radius * 2 < this.left)
       this.speedx = -this.speedx;
-    if (boundarybox.height -4- this.radius * 2 < this.top)
+    if (boundarybox.height -5- this.radius * 2 < this.top)
       this.speedy = -this.speedy;
     if (boundarybox.left-boundarybox.x >= this.left) this.speedx = 1;
     if (boundarybox.top-boundarybox.y >= this.top) this.speedy = 1;
@@ -123,7 +123,7 @@ for (let i = 0; i < 50; i++) {
 
 boundary.addEventListener("click", (e) => {
   console.log(e.x);
-
+  if(ballCollection.length<500){
   for (let i = 0; i < 10; i++) {
     let radius = getRandom(8, 15);
     console.log(e.x+", "+e.y);
@@ -142,6 +142,8 @@ boundary.addEventListener("click", (e) => {
 
     ball.create();
     ballCollection.push(ball);
+  }}else{
+    alert("Ball Count Reached 500 Number of Balls.")
   }
 });
 
