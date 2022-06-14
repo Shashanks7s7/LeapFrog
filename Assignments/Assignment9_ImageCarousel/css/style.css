@@ -1,0 +1,45 @@
+#carousel-container {
+  width: 600px;
+  margin: 40px auto;
+  height: 400px;
+
+  overflow: hidden;
+  position: relative;
+}
+img {
+  height: 400px;
+  width: 600px;
+}
+#butn1 {
+  width: 50px;
+  height: 50px;
+
+  background-image: url(../images/arrow-left-to-right-11550125569m6ffhoapdb.png);
+  background-size: cover;
+  color: "black";
+  top: 180px;
+  position: absolute;
+  opacity: 70%;
+  cursor: pointer;
+}
+#butn1:hover {
+  opacity: 100%;
+}
+#butn2 {
+  width: 50px;
+  height: 50px;
+
+  background-image: url(../images/right.png);
+  background-size: cover;
+  color: "black";
+
+  top: 180px;
+  left: 550px;
+  position: absolute;
+  overflow: visible;
+  opacity: 70%;
+  cursor: pointer;
+}
+#butn2:hover {
+  opacity: 100%;
+}
