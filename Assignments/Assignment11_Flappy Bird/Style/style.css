@@ -1,0 +1,38 @@
+#gamecontainer {
+  background-image: url("../background-day.png");
+  height: 600px;
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 20px;
+  position: relative;
+  border: 5px black solid;
+  overflow: hidden;
+}
+#game {
+  background: url(../background-day.png);
+  height: 600px;
+  width: 900px;
+  background-size: cover;
+
+  position: relative;
+  border: 5px black solid;
+  overflow: hidden;
+}
+#base {
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  overflow: hidden;
+  top: 510px;
+  animation: animatedBackground 15s linear infinite;
+  background-image: url("../base.png");
+  background-repeat: repeat-x;
+}
+@keyframes animatedBackground {
+  0% {
+    background-position: 800px 00px;
+  }
+  100% {
+    background-position: 00px 0px;
+  }
+}
