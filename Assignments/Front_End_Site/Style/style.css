@@ -1,0 +1,119 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Inter";
+}
+header {
+  padding: 20px 0;
+  overflow: hidden;
+  background-color: aquamarine;
+}
+
+nav {
+  overflow: hidden;
+  padding-top: 10px;
+}
+.logo {
+  float: left;
+  margin-right: 60px;
+  text-align: center;
+
+  margin-left: 129px;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: #000000;
+}
+
+li a {
+  padding: 0px 19px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 16px;
+  text-decoration: none;
+  /* identical to box height, or 114% */
+
+  /* Secondary/color */
+
+  color: black;
+}
+li a:hover {
+  color: #6c757d;
+}
+.navlist {
+  float: right;
+  list-style-type: none;
+  overflow: hidden;
+  width: 100%;
+}
+.navlist li {
+  display: inline;
+  float: right;
+  text-align: center;
+  padding-right: 80px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 16px;
+  /* identical to box height, or 114% */
+
+  /* Secondary/color */
+
+  color: #6c757d;
+}
+#news {
+  width: 100%;
+  padding: 20px 110px;
+  height: auto;
+  margin: 1px 0;
+  display: flex;
+}
+#newsarticle {
+  width: 60%;
+  height: auto;
+
+  padding: 20px;
+}
+#formfield {
+  padding: 20px;
+  margin: 25px 5px;
+  margin-left: 20px;
+  width: 35%;
+  height: 400px;
+  border: 1px solid grey;
+  border-radius: 20px;
+  display: block;
+}
+.titleinput {
+  width: 80%;
+  height: 50px;
+  padding: 20px;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+#title {
+  font-size: 30px;
+  text-align: left;
+  padding: 10px;
+}
+#subtitle {
+  font-size: 20px;
+  text-align: left;
+  padding: 10px;
+}
+.butn {
+  margin-top: 10px;
+  width: 40%;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  color: black;
+  font-size: 24px;
+  font-weight: bolder;
+  background-color: aquamarine;
+}
