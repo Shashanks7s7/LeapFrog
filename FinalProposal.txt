@@ -1,0 +1,31 @@
+
+Final Project: 8 Ball Pool Game Clone on Web
+Description: Mimic the pool game on web.
+
+Features
+1.	Collision as per the velocity will be displayed.
+2.	Ball moved as per the force applied to it.
+3.	2D graphics with canvas.
+4.	All the rules of pool will be initiated such as on foul the white ball can be drawn in any location.
+5.	Audio will be included.
+6.	Two players can play the game with each other on turn-by-turn basis.
+7.	Stick will move as per the orientation of mouse and also provide the guide line                              
+        as per the orientation.
+8.	The indicator of ball that a player needs to pooled will be shown for user experience.
+9.	Smoothness in Playing.
+10.	API will be integrated for maintaining the high score.
+
+Extra Features
+1.	Can play with CPU.
+2.	Authentication feature will be integrated with the API.
+3.	Additional features such as better Scorecard and Landing Page Graphics will be added.
+
+DEMO
+https://www.youtube.com/watch?v=cgrgOLuBaZ8
+
+
+
+
+
+
+
