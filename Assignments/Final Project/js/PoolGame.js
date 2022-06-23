@@ -1,33 +1,36 @@
-class PoolGame{
-    constructor(){}
-    update(){
-     
-      stick.update()
-      whiteball.update()
-      newTable.clear()
-
-    }
-    draw(){
+class PoolGame {
+  constructor() {}
+  update() {
     
-        newTable.drawImage(assets.table,0,0)
-    stick.draw()
-      whiteball.draw()
-   
-      ballList.forEach((yellowball)=>{
-        yellowball.draw()
-      })
-     
-    }
-}
-const game=new PoolGame()
-function play(){
+    stick.update();
+    if (stick.isshot)
+    
+      ballList.forEach((ball) => {
+        ball.checkPockting()
+        ball.checkCollision(ball);
+        if (ball != whiteball) {
+          ball.updateeachball();
+        }
+      });
+    whiteball.update();
+
+    newTable.clear();
+  }
+  draw() {
+    newTable.drawImage(assets.table, 0, 0);
   
-    game.update()
-    game.draw()
-   
-    requestAnimationFrame(play);
+
+    ballList.forEach((ball) => {
+      ball.draw();
+    });
+    stick.draw();
+  }
 }
-play()
+const game = new PoolGame();
+function play() {
+  game.update();
+  game.draw();
 
-
-
+  requestAnimationFrame(play);
+}
+play();

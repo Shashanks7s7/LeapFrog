@@ -3,7 +3,7 @@ let assets = {};
 let loadingindex = 0;
 
 function assetsload(imgname) {
-  let image = new Image();
+  let image = new Image()
 
   image.src = `./images/${imgname}`;
   loadingindex = loadingindex - 1;
@@ -37,3 +37,5 @@ console.log(assets);
     }, 10);
   }
 }, 100);
+
+console.log("ball width"+assets.whiteball.width/2);

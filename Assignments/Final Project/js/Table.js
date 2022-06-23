@@ -97,11 +97,12 @@ class Table{
           this.ctx = this.canvas.getContext("2d");
           this.canvas.width=950
           this.canvas.height=520
+          
     }
     clear(){
         this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height)
     }
-    drawImage(img,x,y,rotation=0,ox=0,oy=0){
+    drawImage(img,x,y, rotation=0,ox=0,oy=0){
         this.ctx.save();
         this.ctx.translate(x,y)
         this.ctx.rotate(rotation)
