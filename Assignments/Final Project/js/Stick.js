@@ -5,10 +5,12 @@ class Stick {
     rotation = 0,
     isLeftClick = false,
     isLeftRelease = false,
-    ox = 970,
-    oy = 10,
+    ox = 965,
+    oy = 9,
+    offX=undefined,
+    offY=undefined,
     power = 0,
-    isshot = false
+    isShot = false
   ) {
     (this.x = x),
       (this.y = y),
@@ -17,25 +19,31 @@ class Stick {
       (this.isLeftRelease = isLeftRelease),
       (this.ox = ox),
       (this.oy = oy),
+      (this.offX = offX),
+      (this.offY = offY),
       (this.power = power),
-      (this.isshot = isshot);
+      (this.isShot = isShot);
   }
   update() {
-    if (this.isshot) {
+    if (this.isShot) {
       return;
     }
     newTable.canvas.onmousemove = function (e) {
       console.log(e.offsetX+", "+e.offsetY);
-      if (stick.isshot) {
-        e.stopPropagation;
-        return;
-      }
+      // if (stick.isShot) {
+      //   e.stopPropagation;
+      //   return;
+      // }
+      stick.offX=e.offsetX
+      stick.offY=e.offsetY
+    
+    
       let h = e.offsetX - stick.x;
       let b = e.offsetY - stick.y;
       stick.rotation = Math.atan2(b, h);
     };
     newTable.canvas.onmousedown = function (e) {
-      if (stick.isshot) {
+      if (stick.isShot) {
         e.stopPropagation;
         return;
       }
@@ -44,7 +52,7 @@ class Stick {
       }
     };
     newTable.canvas.onmouseup = function (e) {
-      if (stick.isshot) {
+      if (stick.isShot) {
         e.stopPropagation;
         return;
       }
@@ -52,20 +60,20 @@ class Stick {
         stick.isLeftClick = false;
         stick.isLeftRelease = true;
         whiteball.shoot(stick.power, stick.rotation);
-        stick.ox = 950;
-        stick.isshot = true;
+        stick.ox = 900;
+        stick.isShot = true;
         //  stick.power=0
       }
     };
     if (stick.isLeftClick) {
       stick.ox = stick.ox + 5;
-      stick.power = stick.power + 150;
+      stick.power = stick.power + 120;
     }
   }
   draw() {
-    if (this.isshot) {
-      return;
-    }
+    if (!this.isShot) {
+      
+  
     newTable.drawImage(
       assets.stick,
       this.x,
@@ -74,6 +82,27 @@ class Stick {
       this.ox,
       this.oy
     );
+    if(stick.offX!=undefined||stick.offY!=undefined){
+     newTable.drawCircle( stick.offX,stick.offY)
+     newTable.drawLine(this.x,this.y,stick.offX,stick.offY)
+    }
   }
+  if(whiteball.hidden){
+    newTable.drawBall(assets.ballinhand,stick.offX,stick.offY,ballDiameter,ballDiameter)
+    newTable.canvas.onmouseup = function (e) {
+      if (!whiteball.hidden) {
+        e.stopPropagation;
+        return;
+      }
+      if (e.button == 0) {
+        whiteball.x=stick.offX
+        whiteball.y=stick.offY
+        whiteball.hidden = false;
+      
+      }
+    };
+   }
+}
+
 }
 const stick = new Stick();

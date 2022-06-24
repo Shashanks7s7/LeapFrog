@@ -20,6 +20,7 @@ assets.whiteball=assetsload("white_ball.png")
 assets.redball=assetsload("red_ball.png")
 assets.yellowball=assetsload("yellow_ball.png")
 assets.blackball=assetsload("black_ball.png")
+assets.ballinhand=assetsload("ball_in_hand.png")
 
 let checkAssetsLoader = setInterval(() => {
   if (loadingindex === 0) {

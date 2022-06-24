@@ -1,8 +1,8 @@
 class Ball {
   constructor(
     img = null,
-    x = 280 - assets.whiteball.width / 2,
-    y = 250 - assets.whiteball.width / 2,
+    x = 280 - ballDiameter / 2,
+    y = 250 - ballDiameter / 2,
     vx = 0,
     vy = 0,
     mass = 1,
@@ -23,36 +23,38 @@ class Ball {
     if (stick.power > 0 && stick.isLeftRelease) {
       this.x = this.x + this.vx;
       this.y = this.y + this.vy;
-      this.vx = this.vx * 0.98;
-      this.vy = this.vy * 0.98;
+      this.vx = this.vx * ballFriction;
+      this.vy = this.vy * ballFriction;
 
-      if (this.x > assets.table.width - 88) {
-        this.x = assets.table.width - 88;
-        this.vx = -this.vx * 0.98;
+      if (this.x+ballDiameter > assets.table.width - 47) {
+        this.x = assets.table.width - 47-ballDiameter;
+        this.vx = -this.vx * ballFriction;
+     
       }
-      if (this.x < 50) {
-        this.x = 50;
-        this.vx = -this.vx * 0.98;
+      if (this.x < 52) {
+        this.x = 52;
+        this.vx = -this.vx * ballFriction;
       }
-      if (this.y > assets.table.height - 88) {
-        this.y = assets.table.height - 88;
-        this.vy = -this.vy * 0.98;
+      if (this.y+ballDiameter > assets.table.height - 48  && (this.x+ballDiameter/2>490||this.x<430)) {
+        this.y = assets.table.height - 48-ballDiameter;
+        this.vy = -this.vy * ballFriction;
+        
       }
-      if (this.y < 50) {
-        this.y = 50;
-        this.vy = -this.vy * 0.98;
+      if (this.y < 51 && (this.x+ballDiameter/2>490||this.x<449)) {
+        this.y = 51;
+        this.vy = -this.vy * ballFriction;
       }
 
       if (Math.abs(this.vx) < 0.01 && Math.abs(this.vy) < 0.01) {
         stick.isLeftRelease = false;
         stick.power = 0;
-        stick.x = this.x + assets.whiteball.width / 2;
-        stick.y = this.y + assets.whiteball.width / 2;
-        stick.ox = 970;
-        stick.oy = 10;
+        stick.x = this.x +ballDiameter / 2;
+        stick.y = this.y +ballDiameter / 2;
+        stick.ox = 965;
+        stick.oy = 9;
         this.vx = 0;
         this.vy = 0;
-        stick.isshot = false;
+        stick.isShot = false;
       } else {
         stick.isLeftRelease = true;
       }
@@ -64,34 +66,45 @@ class Ball {
     }
     this.x = this.x + this.vx;
     this.y = this.y + this.vy;
-    this.vx = this.vx * 0.98;
-    this.vy = this.vy * 0.98;
+    this.vx = this.vx * ballFriction;
+    this.vy = this.vy * ballFriction;
 
-    if (this.x > assets.table.width - 88 || this.x < 50) {
-      this.vx = -this.vx;
+    if (this.x+ballDiameter > assets.table.width - 47) {
+      this.x = assets.table.width - 47-ballDiameter;
+      this.vx = -this.vx * ballFriction;
     }
-    if (this.y > assets.table.height - 88 || this.y < 50) {
-      this.vy = -this.vy;
+    if (this.x < 52) {
+      this.x = 52;
+      this.vx = -this.vx * ballFriction;
     }
-
-    if (Math.abs(this.vx) < 0.1 && Math.abs(this.vy) < 0.1) {
+    if (this.y+ballDiameter > assets.table.height - 48  && (this.x+ballDiameter/2>490||this.x<450)) {
+      this.y = assets.table.height - 48-ballDiameter;
+      this.vy = -this.vy * ballFriction;
+    }
+    if (this.y < 51 && (this.x+ballDiameter/2>490||this.x<450)) {
+      this.y = 51;
+      this.vy = -this.vy * ballFriction;
+    }
+    if (Math.abs(this.vx) < 0.3 && Math.abs(this.vy) < 0.3) {
       this.vx = 0;
       this.vy = 0;
     }
   }
   draw() {
-    if(this.hidden){
+     if(this.hidden){
       return
     }
-    newTable.drawImage(this.img, this.x, this.y);
+    
+    newTable.drawBall(this.img, this.x, this.y,ballDiameter,ballDiameter);
   }
   shoot(power, rotation) {
     this.vx = (power * Math.cos(rotation)) / 100;
     this.vy = (power * Math.sin(rotation)) / 100;
-    console.log(ballList);
+    
   }
   checkCollision(checkerball) {
     if(this.hidden){
+      console.log("jdlfjo");
       return
     }
     for (let i = 0; i < ballList.length; i++) {
@@ -105,8 +118,8 @@ class Ball {
         ballList[i].y
       );
 
-      if (dist - assets.whiteball.width < 0) {
-      
+      if (dist -ballDiameter < 0) {
+       
         resolveCollision(checkerball, ballList[i]);
       }
     }
@@ -115,21 +128,51 @@ class Ball {
     if(this.hidden){
       return
     }
-    bigPocketCenters.forEach((bigpocket)=>{
-      let distancepocket=distance(bigpocket.xPosition,bigpocket.yPosition,this.x,this.y)
-  console.log(distancepocket+", "+radiusBigpocket);
-      if(distancepocket<radiusBigpocket){
-        
+   for(let i=0;i<bigPocketCenters.length;i++){
+      let distancepocket=distance(bigPocketCenters[i].xPosition,bigPocketCenters[i].yPosition,this.x,this.y)
+  
+    //  if(i%2==0){
+  if(distancepocket<radiusBigpocket){
+        this.x=0;
+        this.y=0
       this.hidden=true;
+    this.vx=0
+    this.vy=0
+    
+      }
+    // }else{
+    //     distancepocket=distance(bigPocketCenters[i].xPosition,bigPocketCenters[i].yPosition,this.x+ballDiameter,this.y+ballDiameter)
+    //     if(distancepocket<radiusBigpocket){
+        
+    //       this.hidden=true;
+    
+    //       }
+      // }
+    }
+    for(let i=0;i<smallPocketCenters.length;i++){
+      let distancepocket=distance(smallPocketCenters[i].xPosition,smallPocketCenters[i].yPosition,this.x,this.y)
+  
+     if(i%2==0){
+  if(distancepocket<radiusBigpocket){
+    this.x=0;
+    this.y=0
+      this.hidden=true;
+      this.vx=0
+      this.vy=0
 
+      }}else{
+        distancepocket=distance(smallPocketCenters[i].xPosition,smallPocketCenters[i].yPosition,this.x+ballDiameter,this.y+ballDiameter)
+        if(distancepocket<radiusBigpocket){
+          this.x=0;
+          this.y=0
+          this.hidden=true;
+          this.vx=0
+          this.vy=0
+    
+          }
       }
-    })
-    smallPocketCenters.forEach((smallpocket)=>{
-      let distancepocket=distance(smallpocket.xPosition,smallpocket.yPosition,this.x,this.y)
-      if(distancepocket<radiusSmallpocket){
-        console.log("pocket");
-      }
-    })
+    }
+   
   }
 }
 let ballList = [];
@@ -162,47 +205,5 @@ for (let i = 0; i < 15; i++) {
     ballList.push(redball);
   }
 }
-console.log(ballList);
-function distance(x1, y1, x2, y2) {
-  const dx = x2 - x1;
-  const dy = y2 - y1;
-  return Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
-}
-function rotate2(vx, vy, angle) {
-  return {
-    x: vx * Math.cos(angle) - vy * Math.sin(angle),
-    y: vx * Math.sin(angle) + vy * Math.cos(angle),
-  };
-}
-function resolveCollision(ball, nextball) {
-  const xSpeedDiff = ball.vx - nextball.vx;
-  const ySpeedDiff = ball.vy - nextball.vy;
-  const xDist = nextball.x - ball.x;
-  const yDist = nextball.y - ball.y;
-  if (xSpeedDiff * xDist + ySpeedDiff * yDist >= 0) {
-    const angle = -Math.atan2(nextball.y - ball.y, nextball.x - ball.x);
-    const m1 = ball.mass;
-    const m2 = nextball.mass;
-    const u1particle = rotate2(ball.vx, ball.vy, angle);
-    const u2otherparticle = rotate2(nextball.vx, nextball.vy, angle);
-    const s1 = {
-      x:
-        (u1particle.x * (m1 - m2)) / (m1 + m2) +
-        (u2otherparticle.x * 2 * m2) / (m1 + m2),
-      y: u1particle.y,
-    };
-    const s2 = {
-      x:
-        (u2otherparticle.x * (m1 - m2)) / (m1 + m2) +
-        (u1particle.x * 2 * m1) / (m1 + m2),
-      y: u2otherparticle.y,
-    };
-    const sFinal1 = rotate2(s1.x, s1.y, -angle);
-    const sFinal2 = rotate2(s2.x, s2.y, -angle);
 
-    ball.vx = sFinal1.x;
-    ball.vy = sFinal1.y;
-    nextball.vx = sFinal2.x;
-    nextball.vy = sFinal2.y;
-  }
-}
+

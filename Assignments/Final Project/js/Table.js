@@ -109,6 +109,21 @@ class Table{
         this.ctx.drawImage(img,-ox,-oy);
         this.ctx.restore();
     }
+    drawBall(img,x,y,height,width){
+        this.ctx.drawImage(img,x,y,width,height);
+    }
+    drawCircle(x,y,radius=14){
+        this.ctx.beginPath()
+        this.ctx.arc(x,y,radius,0,2*Math.PI)
+        this.ctx.stroke()
+    }
+    drawLine(ballx,bally,circlex,circley){
+        this.ctx.beginPath()
+        this.ctx.moveTo(ballx,bally)
+        this.ctx.lineTo(circlex,circley)
+        this.ctx.stroke()
+    }
+    
 
 }
 const newTable=new Table();

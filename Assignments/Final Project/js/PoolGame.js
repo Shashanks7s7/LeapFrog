@@ -3,7 +3,7 @@ class PoolGame {
   update() {
     
     stick.update();
-    if (stick.isshot)
+     if (stick.isShot)
     
       ballList.forEach((ball) => {
         ball.checkPockting()
@@ -13,17 +13,19 @@ class PoolGame {
         }
       });
     whiteball.update();
-
+    
     newTable.clear();
   }
   draw() {
     newTable.drawImage(assets.table, 0, 0);
-  
+    
 
     ballList.forEach((ball) => {
       ball.draw();
     });
     stick.draw();
+    
+   
   }
 }
 const game = new PoolGame();
