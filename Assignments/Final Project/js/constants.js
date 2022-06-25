@@ -1,4 +1,4 @@
-const ballDiameter=34
+const ballDiameter=30
 const ballFriction=0.97
 const ballPositions = [
   { xPosition: 600, yPosition: 250 - 28 / 2 },
@@ -17,17 +17,17 @@ const ballPositions = [
   { xPosition: 703, yPosition: 179 },
   { xPosition: 703, yPosition: 265 },
 ];
-const radiusBigpocket = 31;
-const radiusSmallpocket = 22;
+const radiusBigpocket = 43;
+const radiusSmallpocket =20;
 const bigPocketCenters = [
-  { xPosition: 30, yPosition: 35 },
-  { xPosition: 55, yPosition: 460 },
-  { xPosition: 880, yPosition: 48 },
-  { xPosition: 880, yPosition: 440 },
+  { xPosition: 25, yPosition: 23 },
+  { xPosition: 25, yPosition: 462 },
+  { xPosition: 885, yPosition: 25 },
+  { xPosition: 885, yPosition: 462 },
 
  
 ];
 const smallPocketCenters = [
-  { xPosition: 468, yPosition: 20 },
-  { xPosition: 468, yPosition:500 },
+  { xPosition: 455, yPosition: 13 },
+  { xPosition: 455, yPosition:476 },
 ];

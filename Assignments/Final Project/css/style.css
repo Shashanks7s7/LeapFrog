@@ -1,9 +1,10 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 body {
-  background-image: url("../images/floor.jpg");
+  background-image: url("../images/floor3.jpg");
 }
 /* #gameframe{
     height: 400px;
@@ -15,29 +16,60 @@ body {
 } */
 #assetsloader {
   text-align: center;
-  font-size: 50px;
+  font-size: 80px;
   width: 100%;
   height: 500px;
   padding-top: 300px;
-  background-color: turquoise;
+  color: white;
 }
 #gamebox {
   height: 80vh;
   width: 100%;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }
-#scorecard{
-    height: 12vh;
-    width: 100%;
-    background-color: aqua;
-    
-    justify-content: center;
-    align-items: center;
+#scorecard {
+  height: 13vh;
+  width: 100%;
+  display: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
 }
-#scorecard__scorebox{
-    width: 40%;
-    height: 10vh;
-    background-color: red;
+#scorecard__scorebox {
+  width: 22%;
+  height: 11vh;
+  position: absolute;
+  left: 14%;
+  display: flex;
+  padding: 12px;
+}
+#scorecard__scorebox--ballProfile {
+  height: 60px;
+  width: 100px;
+  background-color: aquamarine;
+  border-radius: 10px;
+  padding: 10px;
+  margin-right: 10px;
+}
+#scorecard__scorebox--profile {
+  height: 50px;
+  width: 500px;
+}
+#scorecard__scorebox--profile--txt {
+  font-size: 24px;
+  font-weight: bold;
+  height: 28px;
+  color: aliceblue;
+  padding-left: 5px;
+}
+#scorecard__scorebox--profile--balllist {
+  margin-top: 2px;
+  width: 100%;
+  height: 30px;
+  display: flex;
 }

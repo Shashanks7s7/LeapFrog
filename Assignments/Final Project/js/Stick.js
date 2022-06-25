@@ -7,8 +7,8 @@ class Stick {
     isLeftRelease = false,
     ox = 965,
     oy = 9,
-    offX=undefined,
-    offY=undefined,
+    offX = undefined,
+    offY = undefined,
     power = 0,
     isShot = false
   ) {
@@ -29,15 +29,14 @@ class Stick {
       return;
     }
     newTable.canvas.onmousemove = function (e) {
-      console.log(e.offsetX+", "+e.offsetY);
+      console.log(e.offsetX + ", " + e.offsetY);
       // if (stick.isShot) {
       //   e.stopPropagation;
       //   return;
       // }
-      stick.offX=e.offsetX
-      stick.offY=e.offsetY
-    
-    
+      stick.offX = e.offsetX;
+      stick.offY = e.offsetY;
+
       let h = e.offsetX - stick.x;
       let b = e.offsetY - stick.y;
       stick.rotation = Math.atan2(b, h);
@@ -72,37 +71,39 @@ class Stick {
   }
   draw() {
     if (!this.isShot) {
-      
-  
-    newTable.drawImage(
-      assets.stick,
-      this.x,
-      this.y,
-      stick.rotation,
-      this.ox,
-      this.oy
-    );
-    if(stick.offX!=undefined||stick.offY!=undefined){
-     newTable.drawCircle( stick.offX,stick.offY)
-     newTable.drawLine(this.x,this.y,stick.offX,stick.offY)
+      newTable.drawImage(
+        assets.stick,
+        this.x,
+        this.y,
+        stick.rotation,
+        this.ox,
+        this.oy
+      );
+      if (stick.offX != undefined || stick.offY != undefined) {
+        newTable.drawCircle(stick.offX, stick.offY);
+        newTable.drawLine(this.x, this.y, stick.offX, stick.offY);
+      }
+    }
+    if (whiteball.hidden) {
+      newTable.drawBall(
+        assets.ballinhand,
+        stick.offX,
+        stick.offY,
+        ballDiameter,
+        ballDiameter
+      );
+      newTable.canvas.onmouseup = function (e) {
+        if (!whiteball.hidden) {
+          e.stopPropagation;
+          return;
+        }
+        if (e.button == 0) {
+          whiteball.x = stick.offX;
+          whiteball.y = stick.offY;
+          whiteball.hidden = false;
+        }
+      };
     }
   }
-  if(whiteball.hidden){
-    newTable.drawBall(assets.ballinhand,stick.offX,stick.offY,ballDiameter,ballDiameter)
-    newTable.canvas.onmouseup = function (e) {
-      if (!whiteball.hidden) {
-        e.stopPropagation;
-        return;
-      }
-      if (e.button == 0) {
-        whiteball.x=stick.offX
-        whiteball.y=stick.offY
-        whiteball.hidden = false;
-      
-      }
-    };
-   }
-}
-
 }
 const stick = new Stick();

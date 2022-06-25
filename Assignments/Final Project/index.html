@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div id="assetsloader">Loading</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8 Ball Pool</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="assetsloader">LOADING...</div>
     <!-- <div id="gameframe"></div> -->
     <div id="scorecard">
-      <div id="scorecard__scorebox"></div>
+      <div id="scorecard__scorebox">
+        <div id="scorecard__scorebox--ballProfile">
+          <img src="images/yellow_ball.png" alt="" />
+        </div>
+        <div id="scorecard__scorebox--profile">
+          <div id="scorecard__scorebox--profile--txt">Player One</div>
+          <div id="scorecard__scorebox--profile--balllist">
+            <img src="images/yellow_ball.png" alt="" />
+            <img src="images/yellow_ball.png" alt="" />
+            <img src="images/yellow_ball.png" alt="" />
+            <img src="images/yellow_ball.png" alt="" />
+            <img src="images/yellow_ball.png" alt="" />
+            <img src="images/yellow_ball.png" alt="" />
+            <img src="images/yellow_ball.png" alt="" />
+          </div>
+        </div>
+      </div>
     </div>
     <div id="gamebox">
-      
-        <canvas id="canvas"></canvas>
+      <canvas id="canvas"></canvas>
     </div>
-    
-
-</body>
-<script src="js/assetsloader.js"></script>
-<script src="js/constants.js"></script>
-<script src="js/utility.js"></script>
-
-<script src="js/Table.js"></script>
-<script src="js/Stick.js"></script>
-<script src="js/Ball.js"></script>
-<script src="js/PoolGame.js"></script>
+  </body>
+  <script src="js/assetsloader.js"></script>
+  <script src="js/constants.js"></script>
+  <script src="js/utility.js"></script>
+  <script src="js/Table.js"></script>
+  <script src="js/Stick.js"></script>
+  <script src="js/Ball.js"></script>
+  <script src="js/PoolGame.js"></script>
 </html>
