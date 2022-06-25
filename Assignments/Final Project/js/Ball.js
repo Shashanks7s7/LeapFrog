@@ -3,18 +3,22 @@ class Ball {
     img = null,
     x = 280 - ballDiameter / 2,
     y = 250 - ballDiameter / 2,
+    type="white",
     vx = 0, //velocityX
     vy = 0, //velocityY
     mass = 1,
+   
     hidden = false,
     ispocketing = false
   ) {
     (this.img = img),
       (this.x = x),
       (this.y = y),
+      (this.type=type),
       (this.vx = vx),
       (this.vy = vy),
       (this.mass = mass),
+     
       (this.hidden = hidden),
       (this.ispocketing = ispocketing);
   }
@@ -59,6 +63,8 @@ class Ball {
         this.vx = 0;
         this.vy = 0;
         stick.isShot = false;
+        i=0//testing
+      //  nextturn=false//testing
       } else {
         stick.isLeftRelease = true;
       }
@@ -99,15 +105,15 @@ class Ball {
     }
   }
   draw() {
-    // if(this.hidden){
-    //   return
-    // }
+    if(this.hidden && this.ispocketing){
+      return
+    }
 
     newTable.drawBall(this.img, this.x, this.y, ballDiameter, ballDiameter);
   }
   shoot(power, rotation) {
-    this.vx = (power * Math.cos(rotation)) / 100;
-    this.vy = (power * Math.sin(rotation)) / 100;
+    this.vx = (power * Math.cos(rotation)) / 150;
+    this.vy = (power * Math.sin(rotation)) / 150;
   }
   checkCollision(checkerball) {
     if (this.hidden) {
@@ -130,7 +136,7 @@ class Ball {
     }
   }
   checkPockting() {
-    if (this.hidden) {
+    if (this.hidden &&this.ispocketing) {
       return;
     }
     for (let i = 0; i < bigPocketCenters.length; i++) {
@@ -142,6 +148,9 @@ class Ball {
       );
       //  if(i%2==0){
       if (distancepocket < radiusBigpocket) {
+        if(this.x==bigPocketCenters[i].xPosition){
+          this.ispocketing=true
+        }
         this.x = bigPocketCenters[i].xPosition;
         this.y = bigPocketCenters[i].yPosition;
         this.vx = 0;
@@ -163,6 +172,9 @@ class Ball {
         this.y
       );
       if (distancepocket < radiusSmallpocket) {
+        if(this.x==smallPocketCenters[i].xPosition){
+          this.ispocketing=true
+        }
         this.x = smallPocketCenters[i].xPosition;
         this.y = smallPocketCenters[i].yPosition;
         this.hidden = true;
@@ -176,6 +188,9 @@ class Ball {
           this.y + ballDiameter
         );
         if (distancepocket < radiusSmallpocket) {
+          if(this.x==smallPocketCenters[i].xPosition){
+            this.ispocketing=true
+          }
           this.x = smallPocketCenters[i].xPosition;
           this.y = smallPocketCenters[i].yPosition;
           this.hidden = true;
@@ -195,7 +210,8 @@ for (let i = 0; i < 15; i++) {
     const yellowball = new Ball(
       assets.redball,
       ballPositions[i].xPosition,
-      ballPositions[i].yPosition
+      ballPositions[i].yPosition,
+      'red'
     );
     ballList.push(yellowball);
   }
@@ -203,7 +219,8 @@ for (let i = 0; i < 15; i++) {
     const blackball = new Ball(
       assets.blackball,
       ballPositions[i].xPosition,
-      ballPositions[i].yPosition
+      ballPositions[i].yPosition,
+      'black'
     );
     ballList.push(blackball);
   }
@@ -211,8 +228,10 @@ for (let i = 0; i < 15; i++) {
     const redball = new Ball(
       assets.yellowball,
       ballPositions[i].xPosition,
-      ballPositions[i].yPosition
+      ballPositions[i].yPosition,
+      'yellow'
     );
     ballList.push(redball);
   }
 }
+console.log(ballList);

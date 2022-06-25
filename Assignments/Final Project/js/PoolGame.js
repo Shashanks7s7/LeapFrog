@@ -2,7 +2,7 @@ class PoolGame {
   constructor() {}
   update() {
     stick.update();
-    if (stick.isShot)
+    if (stick.isShot){
       ballList.forEach((ball) => {
         ball.checkPockting();
         ball.checkCollision(ball);
@@ -11,7 +11,21 @@ class PoolGame {
         }
       });
     whiteball.update();
-
+    
+  
+  playerList.forEach((player)=>{
+    if(player.playerBall==""){
+      console.log("hera, hai pool game");
+      gameRules.ballAssign();
+     
+   
+      
+    }
+    gameRules.nextTurnfunction()
+    player.updateScoreball()
+   
+  })}
+  
     newTable.clear();
   }
   draw() {

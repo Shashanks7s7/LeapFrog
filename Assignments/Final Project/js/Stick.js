@@ -1,3 +1,4 @@
+const maxPower=5500
 class Stick {
   constructor(
     x = 280,
@@ -64,9 +65,9 @@ class Stick {
         //  stick.power=0
       }
     };
-    if (stick.isLeftClick) {
+    if (stick.isLeftClick && stick.power<=maxPower) {
       stick.ox = stick.ox + 5;
-      stick.power = stick.power + 120;
+      stick.power = stick.power + 150;
     }
   }
   draw() {
@@ -97,10 +98,12 @@ class Stick {
           e.stopPropagation;
           return;
         }
+        
         if (e.button == 0) {
           whiteball.x = stick.offX;
           whiteball.y = stick.offY;
           whiteball.hidden = false;
+          whiteball.ispocketing=false
         }
       };
     }
