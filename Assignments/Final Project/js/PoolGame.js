@@ -2,7 +2,7 @@ class PoolGame {
   constructor() {}
   update() {
     stick.update();
-    if (stick.isShot){
+    if (stick.isShot) {
       ballList.forEach((ball) => {
         ball.checkPockting();
         ball.checkCollision(ball);
@@ -10,22 +10,24 @@ class PoolGame {
           ball.updateeachball();
         }
       });
-    whiteball.update();
-    
-  
-  playerList.forEach((player)=>{
-    if(player.playerBall==""){
-      console.log("hera, hai pool game");
-      gameRules.ballAssign();
-     
-   
-      
+      whiteball.update();
+      playerList.forEach((player) => {
+        if (player.playerBall == "") {
+          gameRules.ballAssign();
+        } else {
+          gameRules.fouldetection(player);
+        }
+
+        gameRules.nextTurnfunction();
+        player.updateScoreball();
+      });
+    } else {
+      whiteball.checkPockting();
+      firstcollidedball = "";
+      player1.updateScoreball();
+      player2.updateScoreball();
     }
-    gameRules.nextTurnfunction()
-    player.updateScoreball()
-   
-  })}
-  
+
     newTable.clear();
   }
   draw() {

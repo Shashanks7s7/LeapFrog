@@ -3,22 +3,21 @@ class Ball {
     img = null,
     x = 280 - ballDiameter / 2,
     y = 250 - ballDiameter / 2,
-    type="white",
+    type = "white",
     vx = 0, //velocityX
     vy = 0, //velocityY
     mass = 1,
-   
+
     hidden = false,
     ispocketing = false
   ) {
     (this.img = img),
       (this.x = x),
       (this.y = y),
-      (this.type=type),
+      (this.type = type),
       (this.vx = vx),
       (this.vy = vy),
       (this.mass = mass),
-     
       (this.hidden = hidden),
       (this.ispocketing = ispocketing);
   }
@@ -62,9 +61,11 @@ class Ball {
         stick.oy = 9;
         this.vx = 0;
         this.vy = 0;
+
         stick.isShot = false;
-        i=0//testing
-      //  nextturn=false//testing
+
+        i = 0; //testing
+        nextturn = false; //testing
       } else {
         stick.isLeftRelease = true;
       }
@@ -105,8 +106,8 @@ class Ball {
     }
   }
   draw() {
-    if(this.hidden && this.ispocketing){
-      return
+    if (this.hidden && this.ispocketing) {
+      return;
     }
 
     newTable.drawBall(this.img, this.x, this.y, ballDiameter, ballDiameter);
@@ -131,13 +132,24 @@ class Ball {
       );
 
       if (dist - ballDiameter < 0) {
+        if (firstcollidedball == "") {
+          firstcollidedball = ballList[i].type;
+        }
+
         resolveCollision(checkerball, ballList[i]);
       }
     }
   }
   checkPockting() {
-    if (this.hidden &&this.ispocketing) {
+    if (this.hidden && this.ispocketing) {
       return;
+    }
+    if (foul && this.type == "white") {
+      console.log("nononono");
+      this.ispocketing = true;
+      this.hidden = true;
+      foul = false;
+      stick.isShot = true;
     }
     for (let i = 0; i < bigPocketCenters.length; i++) {
       let distancepocket = distance(
@@ -148,14 +160,53 @@ class Ball {
       );
       //  if(i%2==0){
       if (distancepocket < radiusBigpocket) {
-        if(this.x==bigPocketCenters[i].xPosition){
-          this.ispocketing=true
+        if (this.x == bigPocketCenters[i].xPosition) {
+          this.ispocketing = true;
+          if (player1.playerTurn) {
+            //next turn condition
+            if (this.type == player1.playerBall) {
+              player1.ballCount = player1.ballCount - 1;
+            } else if (this.type == "white") {
+             foul=true
+            }else if (this.type == "black") {
+             
+            }
+             else {
+              player2.ballCount = player2.ballCount - 1;
+             
+              i = 0;
+              //gameRules.nextTurnfunction();
+
+              ///////////////////
+            }
+          } else {
+            if (this.type == player2.playerBall) {
+              player2.ballCount = player2.ballCount - 1;
+            } else if (this.type == "white") {
+             foul=true
+             
+            
+            }else if (this.type == "black") {
+             
+            }
+             else {
+              player1.ballCount = player1.ballCount - 1;
+             
+              i = 0;
+              //gameRules.nextTurnfunction();
+
+              ///////////////////
+            }
+          } ///upto here
         }
         this.x = bigPocketCenters[i].xPosition;
         this.y = bigPocketCenters[i].yPosition;
         this.vx = 0;
         this.vy = 0;
-        this.hidden = true;
+        if(this.type!="white"){
+          this.hidden = true;
+        }
+        
       }
       // }else{
       //     distancepocket=distance(bigPocketCenters[i].xPosition,bigPocketCenters[i].yPosition,this.x+ballDiameter,this.y+ballDiameter)
@@ -172,12 +223,49 @@ class Ball {
         this.y
       );
       if (distancepocket < radiusSmallpocket) {
-        if(this.x==smallPocketCenters[i].xPosition){
-          this.ispocketing=true
+        if (this.x == smallPocketCenters[i].xPosition) {
+          this.ispocketing = true;
+          //next turn condition
+          if (this.type == player1.playerBall) {
+            player1.ballCount = player1.ballCount - 1;
+          } else if (this.type == "white") {
+           foul=true
+          }else if (this.type == "black") {
+           
+          }
+           else {
+            player2.ballCount = player2.ballCount - 1;
+           
+            i = 0;
+            //gameRules.nextTurnfunction();
+
+            ///////////////////
+          }
+        } else {
+          if (this.type == player2.playerBall) {
+            player2.ballCount = player2.ballCount - 1;
+          } else if (this.type == "white") {
+           foul=true
+           
+          
+          }else if (this.type == "black") {
+           
+          }
+           else {
+            player1.ballCount = player1.ballCount - 1;
+           
+            i = 0;
+            //gameRules.nextTurnfunction();
+
+            ///////////////////
+          }
+          ///upto here
         }
         this.x = smallPocketCenters[i].xPosition;
         this.y = smallPocketCenters[i].yPosition;
-        this.hidden = true;
+        if(this.type!="white"){
+          this.hidden = true;
+        }
         this.vx = 0;
         this.vy = 0;
       } else {
@@ -188,12 +276,14 @@ class Ball {
           this.y + ballDiameter
         );
         if (distancepocket < radiusSmallpocket) {
-          if(this.x==smallPocketCenters[i].xPosition){
-            this.ispocketing=true
+          if (this.x == smallPocketCenters[i].xPosition) {
+            this.ispocketing = true;
           }
           this.x = smallPocketCenters[i].xPosition;
           this.y = smallPocketCenters[i].yPosition;
-          this.hidden = true;
+          if(this.type!="white"){
+            this.hidden = true;
+          }
           this.vx = 0;
           this.vy = 0;
         }
@@ -211,7 +301,7 @@ for (let i = 0; i < 15; i++) {
       assets.redball,
       ballPositions[i].xPosition,
       ballPositions[i].yPosition,
-      'red'
+      "red"
     );
     ballList.push(yellowball);
   }
@@ -220,7 +310,7 @@ for (let i = 0; i < 15; i++) {
       assets.blackball,
       ballPositions[i].xPosition,
       ballPositions[i].yPosition,
-      'black'
+      "black"
     );
     ballList.push(blackball);
   }
@@ -229,9 +319,8 @@ for (let i = 0; i < 15; i++) {
       assets.yellowball,
       ballPositions[i].xPosition,
       ballPositions[i].yPosition,
-      'yellow'
+      "yellow"
     );
     ballList.push(redball);
   }
 }
-console.log(ballList);

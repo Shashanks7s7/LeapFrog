@@ -1,4 +1,4 @@
-const maxPower=5500
+const maxPower = 5500;
 class Stick {
   constructor(
     x = 280,
@@ -11,7 +11,8 @@ class Stick {
     offX = undefined,
     offY = undefined,
     power = 0,
-    isShot = false
+    isShot = false,
+    ismoving = false
   ) {
     (this.x = x),
       (this.y = y),
@@ -23,14 +24,16 @@ class Stick {
       (this.offX = offX),
       (this.offY = offY),
       (this.power = power),
-      (this.isShot = isShot);
+      (this.isShot = isShot),
+      (this.ismoving = ismoving);
   }
   update() {
     if (this.isShot) {
+      console.log("very tens using this algorithm");
       return;
     }
     newTable.canvas.onmousemove = function (e) {
-      console.log(e.offsetX + ", " + e.offsetY);
+      // console.log(e.offsetX + ", " + e.offsetY);
       // if (stick.isShot) {
       //   e.stopPropagation;
       //   return;
@@ -65,7 +68,7 @@ class Stick {
         //  stick.power=0
       }
     };
-    if (stick.isLeftClick && stick.power<=maxPower) {
+    if (stick.isLeftClick && stick.power <= maxPower) {
       stick.ox = stick.ox + 5;
       stick.power = stick.power + 150;
     }
@@ -85,7 +88,7 @@ class Stick {
         newTable.drawLine(this.x, this.y, stick.offX, stick.offY);
       }
     }
-    if (whiteball.hidden) {
+    if (whiteball.hidden || foul) {
       newTable.drawBall(
         assets.ballinhand,
         stick.offX,
@@ -98,12 +101,17 @@ class Stick {
           e.stopPropagation;
           return;
         }
-        
+
         if (e.button == 0) {
           whiteball.x = stick.offX;
           whiteball.y = stick.offY;
           whiteball.hidden = false;
-          whiteball.ispocketing=false
+          whiteball.ispocketing = false;
+          stick.ismoving=false
+         stick.isShot=false
+         stick.x=stick.offX+ballDiameter/2
+           stick.y=stick.offY+ballDiameter/2
+         console.log(stick.isShot);
         }
       };
     }
