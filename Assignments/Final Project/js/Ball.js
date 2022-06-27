@@ -140,12 +140,49 @@ class Ball {
       }
     }
   }
+  turnchecker() {
+    if (player1.playerTurn) {
+      //next turn condition
+      if (this.type == player1.playerBall) {
+        player1.ballCount = player1.ballCount - 1;
+      } else if (this.type == "white") {
+      } else if (this.type == "black" && player1.ballCount > 0) {
+        player2.isPlayerWin = true;
+      } else if (this.type == "black" && player1.ballCount == 0) {
+        player1.isPlayerWin = true;
+      } else {
+        player2.ballCount = player2.ballCount - 1;
+
+        i = 0;
+        foul = true;
+        //gameRules.nextTurnfunction();
+
+        ///////////////////
+      }
+    } else {
+      if (this.type == player2.playerBall) {
+        player2.ballCount = player2.ballCount - 1;
+      } else if (this.type == "white") {
+      } else if (this.type == "black" && player2.ballCount > 0) {
+        player1.isPlayerWin = true;
+      } else if (this.type == "black" && player2.ballCount == 0) {
+        player2.isPlayerWin = true;
+      } else {
+        player1.ballCount = player1.ballCount - 1;
+
+        foul = true;
+        i = 0;
+        //gameRules.nextTurnfunction();
+
+        ///////////////////
+      }
+    } ///upto here
+  }
   checkPockting() {
     if (this.hidden && this.ispocketing) {
       return;
     }
     if (foul && this.type == "white") {
-      console.log("nononono");
       this.ispocketing = true;
       this.hidden = true;
       foul = false;
@@ -162,51 +199,16 @@ class Ball {
       if (distancepocket < radiusBigpocket) {
         if (this.x == bigPocketCenters[i].xPosition) {
           this.ispocketing = true;
-          if (player1.playerTurn) {
-            //next turn condition
-            if (this.type == player1.playerBall) {
-              player1.ballCount = player1.ballCount - 1;
-            } else if (this.type == "white") {
-             foul=true
-            }else if (this.type == "black") {
-             
-            }
-             else {
-              player2.ballCount = player2.ballCount - 1;
-             
-              i = 0;
-              //gameRules.nextTurnfunction();
-
-              ///////////////////
-            }
-          } else {
-            if (this.type == player2.playerBall) {
-              player2.ballCount = player2.ballCount - 1;
-            } else if (this.type == "white") {
-             foul=true
-             
-            
-            }else if (this.type == "black") {
-             
-            }
-             else {
-              player1.ballCount = player1.ballCount - 1;
-             
-              i = 0;
-              //gameRules.nextTurnfunction();
-
-              ///////////////////
-            }
-          } ///upto here
+          pocketedBallAtInstant.push(this.type);
+          this.turnchecker();
         }
         this.x = bigPocketCenters[i].xPosition;
         this.y = bigPocketCenters[i].yPosition;
         this.vx = 0;
         this.vy = 0;
-        if(this.type!="white"){
+        if (this.type != "white") {
           this.hidden = true;
         }
-        
       }
       // }else{
       //     distancepocket=distance(bigPocketCenters[i].xPosition,bigPocketCenters[i].yPosition,this.x+ballDiameter,this.y+ballDiameter)
@@ -225,45 +227,12 @@ class Ball {
       if (distancepocket < radiusSmallpocket) {
         if (this.x == smallPocketCenters[i].xPosition) {
           this.ispocketing = true;
-          //next turn condition
-          if (this.type == player1.playerBall) {
-            player1.ballCount = player1.ballCount - 1;
-          } else if (this.type == "white") {
-           foul=true
-          }else if (this.type == "black") {
-           
-          }
-           else {
-            player2.ballCount = player2.ballCount - 1;
-           
-            i = 0;
-            //gameRules.nextTurnfunction();
-
-            ///////////////////
-          }
-        } else {
-          if (this.type == player2.playerBall) {
-            player2.ballCount = player2.ballCount - 1;
-          } else if (this.type == "white") {
-           foul=true
-           
-          
-          }else if (this.type == "black") {
-           
-          }
-           else {
-            player1.ballCount = player1.ballCount - 1;
-           
-            i = 0;
-            //gameRules.nextTurnfunction();
-
-            ///////////////////
-          }
-          ///upto here
+          pocketedBallAtInstant.push(this.type);
+          this.turnchecker();
         }
         this.x = smallPocketCenters[i].xPosition;
         this.y = smallPocketCenters[i].yPosition;
-        if(this.type!="white"){
+        if (this.type != "white") {
           this.hidden = true;
         }
         this.vx = 0;
@@ -278,10 +247,12 @@ class Ball {
         if (distancepocket < radiusSmallpocket) {
           if (this.x == smallPocketCenters[i].xPosition) {
             this.ispocketing = true;
+            pocketedBallAtInstant.push(this.type);
+            this.turnchecker();
           }
           this.x = smallPocketCenters[i].xPosition;
           this.y = smallPocketCenters[i].yPosition;
-          if(this.type!="white"){
+          if (this.type != "white") {
             this.hidden = true;
           }
           this.vx = 0;
@@ -292,6 +263,7 @@ class Ball {
   }
 }
 let ballList = [];
+let pocketedBallAtInstant = [];
 const whiteball = new Ball(assets.whiteball);
 ballList.push(whiteball);
 

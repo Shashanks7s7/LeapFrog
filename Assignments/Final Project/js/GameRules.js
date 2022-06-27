@@ -11,9 +11,6 @@ class GameRules {
     ballList.forEach((ball) => {
       if (ball.hidden) {
         if (ball.type == "white") {
-
-         
-          
           return;
         }
         if (ball.type == "black") {
@@ -43,16 +40,11 @@ class GameRules {
           player1.playerBall = "";
           player2.playerBall = "";
         }
-      } else {
-        nextturn = true;
       }
     });
   }
   nextTurnfunction() {
-    console.log("checking" + nextturn + ", " + i);
-
     if (nextturn && i == 0) {
-      console.log("woooohohooooooooooooooooo");
       player1.playerTurn = !player1.playerTurn;
       player2.playerTurn = !player2.playerTurn;
       i = 1;
@@ -62,31 +54,58 @@ class GameRules {
   fouldetection(player) {
     if (player.playerTurn) {
       if (firstcollidedball == "" && !stick.isShot && i == 0) {
-        console.log("nehiii" + firstcollidedball + player.playerName);
         foul = true;
-      nextturn=true;
-     stick.ismoving=true
-        
-      
-        return;
-      }
-      if (firstcollidedball == player.playerBall && !stick.isShot && i == 0) {
-        console.log("I am baxk " + firstcollidedball + player.playerName);
-        return;
-      }
+        nextturn = true;
 
-      if (
+        return;
+      } else if (
+        player.playerBall == "" &&
+        firstcollidedball != "" &&
+        !stick.isShot
+      ) {
+        nextturn = true;
+      } else if (
+        firstcollidedball == player.playerBall &&
+        !stick.isShot &&
+        i == 0
+      ) {
+        if (pocketedBallAtInstant.length == 0) {
+          nextturn = true;
+        } else {
+          pocketedBallAtInstant.forEach((pocketedball) => {
+            if (pocketedball == player.playerBall) {
+              return;
+            }
+            if (pocketedball != player.playerBall) {
+              foul = true;
+              nextturn = true;
+            }
+          });
+        }
+      } else if (
         firstcollidedball != "" &&
         firstcollidedball != player.playerBall &&
         !stick.isShot &&
         i == 0
       ) {
-        console.log("I am dead" + firstcollidedball + player.playerName);
-      
         foul = true;
-        nextturn=true;
-     stick.ismoving=true
+        nextturn = true;
       }
+      //       }else if(player.playerBall!=""&& pocketedBallAtInstant[0]!=player.playerBall&&pocketedBallAtInstant.length>0 ){
+      //         nextturn = true;
+
+      // foul=true
+      //       }
+    }
+  }
+  endGame(player) {
+    if (player.isPlayerWin) {
+      window.cancelAnimationFrame(requestAnimation);
+      scoreCard.style.display = "none";
+      gameBox.style.display = "none";
+      assetsLoader.innerHTML = `${player.playerName} Wins`;
+      assetsLoader.style.opacity = "100%";
+      assetsLoader.style.display = "block";
     }
   }
 }

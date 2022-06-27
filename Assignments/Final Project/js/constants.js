@@ -1,4 +1,4 @@
-const ballDiameter=30
+const ballDiameter=27
 const ballFriction=0.976
 const ballPositions = [
   { xPosition: 600, yPosition: 250 - 28 / 2 },

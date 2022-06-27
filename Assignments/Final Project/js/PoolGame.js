@@ -14,16 +14,17 @@ class PoolGame {
       playerList.forEach((player) => {
         if (player.playerBall == "") {
           gameRules.ballAssign();
-        } else {
-          gameRules.fouldetection(player);
         }
+        gameRules.fouldetection(player);
 
         gameRules.nextTurnfunction();
         player.updateScoreball();
+        gameRules.endGame(player);
       });
     } else {
       whiteball.checkPockting();
       firstcollidedball = "";
+      pocketedBallAtInstant = [];
       player1.updateScoreball();
       player2.updateScoreball();
     }
@@ -40,11 +41,12 @@ class PoolGame {
   }
 }
 const game = new PoolGame();
+let requestAnimation = null;
 function play() {
   if (!isloading) {
     game.update();
     game.draw();
   }
-  requestAnimationFrame(play);
+  requestAnimation = requestAnimationFrame(play);
 }
 play();

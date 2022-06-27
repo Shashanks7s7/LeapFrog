@@ -29,7 +29,6 @@ class Stick {
   }
   update() {
     if (this.isShot) {
-      console.log("very tens using this algorithm");
       return;
     }
     newTable.canvas.onmousemove = function (e) {
@@ -107,11 +106,10 @@ class Stick {
           whiteball.y = stick.offY;
           whiteball.hidden = false;
           whiteball.ispocketing = false;
-          stick.ismoving=false
-         stick.isShot=false
-         stick.x=stick.offX+ballDiameter/2
-           stick.y=stick.offY+ballDiameter/2
-         console.log(stick.isShot);
+          stick.ox = 965;
+          stick.isShot = false;
+          stick.x = stick.offX + ballDiameter / 2;
+          stick.y = stick.offY + ballDiameter / 2;
         }
       };
     }
