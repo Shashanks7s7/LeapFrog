@@ -6,7 +6,7 @@ class Ball {
     type = "white",
     vx = 0, //velocityX
     vy = 0, //velocityY
-    mass = 1,
+    mass = 2,
 
     hidden = false,
     ispocketing = false
@@ -100,7 +100,7 @@ class Ball {
       this.y = 51;
       this.vy = -this.vy * ballFriction;
     }
-    if (Math.abs(this.vx) < 0.3 && Math.abs(this.vy) < 0.3) {
+    if (Math.abs(this.vx) < 0.4 && Math.abs(this.vy) < 0.4) {
       this.vx = 0;
       this.vy = 0;
     }
@@ -113,8 +113,8 @@ class Ball {
     newTable.drawBall(this.img, this.x, this.y, ballDiameter, ballDiameter);
   }
   shoot(power, rotation) {
-    this.vx = (power * Math.cos(rotation)) / 150;
-    this.vy = (power * Math.sin(rotation)) / 150;
+    this.vx = (power * Math.cos(rotation)) / 160;
+    this.vy = (power * Math.sin(rotation)) / 160;
   }
   checkCollision(checkerball) {
     if (this.hidden) {
@@ -187,6 +187,7 @@ class Ball {
       this.hidden = true;
       foul = false;
       stick.isShot = true;
+     
     }
     for (let i = 0; i < bigPocketCenters.length; i++) {
       let distancepocket = distance(
@@ -206,9 +207,10 @@ class Ball {
         this.y = bigPocketCenters[i].yPosition;
         this.vx = 0;
         this.vy = 0;
-        if (this.type != "white") {
-          this.hidden = true;
-        }
+        this.hidden=true
+        // if (this.type != "white") {
+        //   this.hidden = true;
+        // }
       }
       // }else{
       //     distancepocket=distance(bigPocketCenters[i].xPosition,bigPocketCenters[i].yPosition,this.x+ballDiameter,this.y+ballDiameter)
@@ -232,9 +234,10 @@ class Ball {
         }
         this.x = smallPocketCenters[i].xPosition;
         this.y = smallPocketCenters[i].yPosition;
-        if (this.type != "white") {
-          this.hidden = true;
-        }
+        // if (this.type != "white") {
+        //   this.hidden = true;
+        // }
+        this.hidden=true
         this.vx = 0;
         this.vy = 0;
       } else {
@@ -252,9 +255,10 @@ class Ball {
           }
           this.x = smallPocketCenters[i].xPosition;
           this.y = smallPocketCenters[i].yPosition;
-          if (this.type != "white") {
-            this.hidden = true;
-          }
+          // if (this.type != "white") {
+          //   this.hidden = true;
+          // }
+          this.hidden=true
           this.vx = 0;
           this.vy = 0;
         }

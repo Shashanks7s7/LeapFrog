@@ -1,4 +1,4 @@
-const maxPower = 5500;
+const maxPower = 4500;
 class Stick {
   constructor(
     x = 280,
@@ -69,7 +69,7 @@ class Stick {
     };
     if (stick.isLeftClick && stick.power <= maxPower) {
       stick.ox = stick.ox + 5;
-      stick.power = stick.power + 150;
+      stick.power = stick.power + 120;
     }
   }
   draw() {
@@ -102,6 +102,19 @@ class Stick {
         }
 
         if (e.button == 0) {
+          if (stick.offX + ballDiameter > assets.table.width - 47) {
+            stick.offX = assets.table.width - 47 - ballDiameter;
+          }
+          if (stick.offX < 52) {
+            stick.offX = 52;
+          }
+          if (stick.offY + ballDiameter > assets.table.height - 48) {
+            stick.offY = assets.table.height - 48 - ballDiameter;
+          }
+          if (stick.offY < 51) {
+            stick.offY = 51;
+          }
+          stick.power=0
           whiteball.x = stick.offX;
           whiteball.y = stick.offY;
           whiteball.hidden = false;

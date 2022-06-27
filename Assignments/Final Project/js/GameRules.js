@@ -63,6 +63,7 @@ class GameRules {
         firstcollidedball != "" &&
         !stick.isShot
       ) {
+        firstcollidedball = "";
         nextturn = true;
       } else if (
         firstcollidedball == player.playerBall &&
@@ -70,13 +71,24 @@ class GameRules {
         i == 0
       ) {
         if (pocketedBallAtInstant.length == 0) {
+          firstcollidedball = "";
           nextturn = true;
         } else {
           pocketedBallAtInstant.forEach((pocketedball) => {
             if (pocketedball == player.playerBall) {
+              firstcollidedball = "";
               return;
             }
-            if (pocketedball != player.playerBall) {
+            if (pocketedball == "white") {
+              firstcollidedball = "";
+              whiteball.hidden = true;
+              foul = true;
+              whiteball.ispocketing = true;
+
+              nextturn = true;
+            }
+            if (pocketedball != player.playerBall && pocketedball != "white") {
+              firstcollidedball = "";
               foul = true;
               nextturn = true;
             }
@@ -88,6 +100,8 @@ class GameRules {
         !stick.isShot &&
         i == 0
       ) {
+        firstcollidedball = "";
+
         foul = true;
         nextturn = true;
       }
