@@ -47,7 +47,21 @@ let checkAssetsLoader = setInterval(() => {
 }, 100);
 
 doublebutton.addEventListener("click", function () {
+  
   gameMenu.style.display = "none";
   scoreCard.style.display = "block";
   gameBox.style.display = "flex";
+  
+});
+
+document.getElementById("one").addEventListener("click", function () {
+  gameMenu.style.display = "none";
+  scoreCard.style.display = "block";
+  gameBox.style.display = "flex";
+  playerList.pop()
+  player2=new Player("CPU", "CPU", "", 7, false, false);
+  playerList.push(player2)
+  vscpu=true
+ cpu=new CPU()
+  cpu.findnearestball()
 });

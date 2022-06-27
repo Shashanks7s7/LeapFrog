@@ -40,9 +40,10 @@ class Stick {
       stick.offX = e.offsetX;
       stick.offY = e.offsetY;
 
-      let h = e.offsetX - stick.x;
-      let b = e.offsetY - stick.y;
-      stick.rotation = Math.atan2(b, h);
+      let b = e.offsetX - stick.x;
+      let p = e.offsetY - stick.y;
+      stick.rotation = Math.atan2(p, b);
+      
     };
     newTable.canvas.onmousedown = function (e) {
       if (stick.isShot) {
@@ -87,6 +88,7 @@ class Stick {
         newTable.drawLine(this.x, this.y, stick.offX, stick.offY);
       }
     }
+    if(player1.playerTurn||!cpu){
     if (whiteball.hidden || foul) {
       newTable.drawBall(
         assets.ballinhand,
@@ -126,6 +128,6 @@ class Stick {
         }
       };
     }
-  }
+  }}
 }
 const stick = new Stick();

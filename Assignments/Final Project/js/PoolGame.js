@@ -1,8 +1,14 @@
 class PoolGame {
   constructor() {}
   update() {
-    stick.update();
-    if (stick.isShot) {
+    if(player1.playerTurn||!cpu){
+  stick.update();
+    
+    }
+    if(vscpu && !stick.isShot){
+      cpu.findnearestball()
+      }
+
       ballList.forEach((ball) => {
         ball.checkPockting();
         ball.checkCollision(ball);
@@ -10,6 +16,10 @@ class PoolGame {
           ball.updateeachball();
         }
       });
+    if (stick.isShot) {
+     
+        
+      
       whiteball.update();
       playerList.forEach((player) => {
         if (player.playerBall == "") {

@@ -41,3 +41,40 @@ function resolveCollision(ball, nextball) {
     nextball.vy = sFinal2.y;
   }
 }
+function sortFunction(a, b) {
+	if (a[0] === b[0]) {
+		return 0;
+	}
+	else {
+		return (a[0] < b[0]) ? -1 : 1;
+	}
+}
+
+// Function to sort the array of
+// points by its distance from P
+function sortArr(arr, n, p)
+{
+	// Vector to store the distance
+	// with respective elements
+	
+	var vp = new Array(n);
+	// Storing the distance with its
+	// distance in the vector array
+	for (var i = 0; i < n; i++) {
+
+		var dist = Math.pow((p.x - arr[i].x), 2)
+			+ Math.pow((p.y - arr[i].y), 2);
+    
+		vp[i] = [dist, [arr[i].x, arr[i].y]];
+  
+	}
+	
+	// Sorting the array with
+	// respect to its distance
+	vp.sort(sortFunction);
+ return vp
+	// Output
+	// for (var i = 0; i < n; i++) {
+	// 	document.write("(" + vp[i][1][0] + ", " + vp[i][1][1] + ") ");
+	// }
+}

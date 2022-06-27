@@ -53,16 +53,18 @@ class GameRules {
 
   fouldetection(player) {
     if (player.playerTurn) {
+      console.log(firstcollidedball+"iuoo   "+i+stick.isShot);
       if (firstcollidedball == "" && !stick.isShot && i == 0) {
         foul = true;
         nextturn = true;
-
+console.log("mee1");
         return;
       } else if (
         player.playerBall == "" &&
         firstcollidedball != "" &&
         !stick.isShot
       ) {
+        console.log("2222");
         firstcollidedball = "";
         nextturn = true;
       } else if (
@@ -73,10 +75,12 @@ class GameRules {
         if (pocketedBallAtInstant.length == 0) {
           firstcollidedball = "";
           nextturn = true;
+          console.log("3333111");
         } else {
           pocketedBallAtInstant.forEach((pocketedball) => {
             if (pocketedball == player.playerBall) {
               firstcollidedball = "";
+              console.log("33333222");
               return;
             }
             if (pocketedball == "white") {
@@ -86,11 +90,13 @@ class GameRules {
               whiteball.ispocketing = true;
 
               nextturn = true;
+              console.log("3333333333333333333");
             }
             if (pocketedball != player.playerBall && pocketedball != "white") {
               firstcollidedball = "";
               foul = true;
               nextturn = true;
+              console.log("33334444444");
             }
           });
         }
@@ -104,6 +110,7 @@ class GameRules {
 
         foul = true;
         nextturn = true;
+        console.log("444444444");
       }
       //       }else if(player.playerBall!=""&& pocketedBallAtInstant[0]!=player.playerBall&&pocketedBallAtInstant.length>0 ){
       //         nextturn = true;

@@ -27,6 +27,7 @@ class Ball {
     }
 
     if (stick.power > 0 && stick.isLeftRelease) {
+     
       this.x = this.x + this.vx;
       this.y = this.y + this.vy;
       this.vx = this.vx * ballFriction;
@@ -61,7 +62,7 @@ class Ball {
         stick.oy = 9;
         this.vx = 0;
         this.vy = 0;
-
+       
         stick.isShot = false;
 
         i = 0; //testing
@@ -115,6 +116,7 @@ class Ball {
   shoot(power, rotation) {
     this.vx = (power * Math.cos(rotation)) / 160;
     this.vy = (power * Math.sin(rotation)) / 160;
+
   }
   checkCollision(checkerball) {
     if (this.hidden) {
@@ -146,6 +148,8 @@ class Ball {
       if (this.type == player1.playerBall) {
         player1.ballCount = player1.ballCount - 1;
       } else if (this.type == "white") {
+        i=0
+        nextturn=true
       } else if (this.type == "black" && player1.ballCount > 0) {
         player2.isPlayerWin = true;
       } else if (this.type == "black" && player1.ballCount == 0) {
@@ -163,6 +167,8 @@ class Ball {
       if (this.type == player2.playerBall) {
         player2.ballCount = player2.ballCount - 1;
       } else if (this.type == "white") {
+        i=0
+        nextturn=true
       } else if (this.type == "black" && player2.ballCount > 0) {
         player1.isPlayerWin = true;
       } else if (this.type == "black" && player2.ballCount == 0) {
@@ -186,6 +192,7 @@ class Ball {
       this.ispocketing = true;
       this.hidden = true;
       foul = false;
+      
       stick.isShot = true;
      
     }
