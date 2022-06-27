@@ -22,6 +22,18 @@ body {
   padding-top: 300px;
   color: white;
 }
+#gamemenu{
+  height: 100vh;
+  width: 100%;
+  display: none;
+  background-image: url("../images/wallpaper.jpg");
+  background-position: center;
+  background-size: cover;
+  padding-top: 80px;
+  padding-left: 20px;
+  
+
+}
 #gamebox {
   height: 80vh;
   width: 100%;
@@ -72,4 +84,20 @@ body {
   width: 100%;
   height: 30px;
   display: flex;
+}
+button{
+  float: left;
+  margin-left: 60px;
+  margin-right: 60px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 20px 30px;
+  outline: none;
+  border: 0px;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color:burlywood;
+}
+button:hover{
+  background-color: aliceblue;
 }
