@@ -1,7 +1,7 @@
 const maxPower = 4500;
 class Stick {
   constructor(
-    x = 280,
+    x = 258,
     y = 250,
     rotation = 0,
     isLeftClick = false,
@@ -43,7 +43,6 @@ class Stick {
       let b = e.offsetX - stick.x;
       let p = e.offsetY - stick.y;
       stick.rotation = Math.atan2(p, b);
-      
     };
     newTable.canvas.onmousedown = function (e) {
       if (stick.isShot) {
@@ -62,7 +61,11 @@ class Stick {
       if (e.button == 0) {
         stick.isLeftClick = false;
         stick.isLeftRelease = true;
+
+        if (stick.power == 0) stick.power = 100;
         whiteball.shoot(stick.power, stick.rotation);
+        strikeAudio.volume = 1;
+        strikeAudio.play();
         stick.ox = 900;
         stick.isShot = true;
         //  stick.power=0
@@ -88,60 +91,60 @@ class Stick {
         newTable.drawLine(this.x, this.y, stick.offX, stick.offY);
       }
     }
-    if(player1.playerTurn||!cpu){
-    if (whiteball.hidden || foul) {
-      newTable.drawBall(
-        assets.ballinhand,
-        stick.offX,
-        stick.offY,
-        ballDiameter,
-        ballDiameter
-      );
-      newTable.canvas.onmouseup = function (e) {
-        if (!whiteball.hidden) {
-          e.stopPropagation;
-          return;
-        }
+    if (player1.playerTurn || !cpu) {
+      if (whiteball.hidden || foul) {
+        newTable.drawBall(
+          assets.ballinhand,
+          stick.offX,
+          stick.offY,
+          ballDiameter,
+          ballDiameter
+        );
+        newTable.canvas.onmouseup = function (e) {
+          if (!whiteball.hidden) {
+            e.stopPropagation;
+            return;
+          }
 
-        if (e.button == 0) {
-          if (stick.offX + ballDiameter > assets.table.width - 47) {
-            stick.offX = assets.table.width - 47 - ballDiameter;
+          if (e.button == 0) {
+            if (stick.offX + ballDiameter > assets.table.width - 47) {
+              stick.offX = assets.table.width - 47 - ballDiameter;
+            }
+            if (stick.offX < 52) {
+              stick.offX = 52;
+            }
+            if (stick.offY + ballDiameter > assets.table.height - 48) {
+              stick.offY = assets.table.height - 48 - ballDiameter;
+            }
+            if (stick.offY < 51) {
+              stick.offY = 51;
+            }
+            stick.power = 0;
+            whiteball.x = stick.offX;
+            whiteball.y = stick.offY;
+            whiteball.hidden = false;
+            whiteball.ispocketing = false;
+            stick.ox = 965;
+            stick.isShot = false;
+            stick.x = stick.offX + ballDiameter / 2;
+            stick.y = stick.offY + ballDiameter / 2;
           }
-          if (stick.offX < 52) {
-            stick.offX = 52;
-          }
-          if (stick.offY + ballDiameter > assets.table.height - 48) {
-            stick.offY = assets.table.height - 48 - ballDiameter;
-          }
-          if (stick.offY < 51) {
-            stick.offY = 51;
-          }
-          stick.power=0
-          whiteball.x = stick.offX;
-          whiteball.y = stick.offY;
-          whiteball.hidden = false;
-          whiteball.ispocketing = false;
-          stick.ox = 965;
-          stick.isShot = false;
-          stick.x = stick.offX + ballDiameter / 2;
-          stick.y = stick.offY + ballDiameter / 2;
-        }
-      };
-    }
-  }else{
-    if (whiteball.hidden || foul) {
-      stick.power=0
-      whiteball.x = getRandom(55,600);
-      whiteball.y = getRandom(55,200);
-      whiteball.hidden = false;
-      whiteball.ispocketing = false;
-      stick.ox = 965;
-      stick.isShot = false;
-      stick.x =whiteball.x + ballDiameter / 2;
-      stick.y = whiteball.y + ballDiameter / 2;
-      foul=false
+        };
+      }
+    } else {
+      if (whiteball.hidden || foul) {
+        stick.power = 0;
+        whiteball.x = getRandom(55, 600);
+        whiteball.y = getRandom(55, 200);
+        whiteball.hidden = false;
+        whiteball.ispocketing = false;
+        stick.ox = 965;
+        stick.isShot = false;
+        stick.x = whiteball.x + ballDiameter / 2;
+        stick.y = whiteball.y + ballDiameter / 2;
+        foul = false;
+      }
     }
   }
-}
 }
 const stick = new Stick();

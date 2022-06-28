@@ -22,17 +22,15 @@ body {
   padding-top: 300px;
   color: white;
 }
-#gamemenu{
+#gamemenu {
   height: 100vh;
   width: 100%;
   display: none;
   background-image: url("../images/wallpaper.jpg");
   background-position: center;
   background-size: cover;
-  padding-top: 80px;
+  padding-top: 30px;
   padding-left: 20px;
-  
-
 }
 #gamebox {
   height: 80vh;
@@ -60,6 +58,17 @@ body {
   display: flex;
   padding: 12px;
 }
+#scorecard__logo {
+  width: 20%;
+  height: 13vh;
+  position: absolute;
+  padding: 1px;
+  right: 14%;
+  background-image: url("../images/logo5.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 #scorecard__scorebox--ballProfile {
   height: 60px;
   width: 100px;
@@ -85,19 +94,25 @@ body {
   height: 30px;
   display: flex;
 }
-button{
-  float: left;
+.menu__item {
+  width: 16rem;
   margin-left: 60px;
-  margin-right: 60px;
+  margin-top: 20px;
   font-size: 1.6rem;
   font-weight: bold;
-  padding: 20px 30px;
-  outline: none;
-  border: 0px;
-  border-radius: 15px;
+  padding:1px 10px;
+  padding-top: 108px;
+  padding-left: 60px;
+
+  color: white;
+  border-radius: 20px;
   cursor: pointer;
-  background-color:burlywood;
+ background-image: url("../images/MvsC.png");
+ background-position: center;
+ background-size: cover;
+ opacity: 0.6;
 }
-button:hover{
-  background-color: aliceblue;
+.menu__item:hover {
+  opacity: 1;
+  
 }

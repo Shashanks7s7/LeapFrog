@@ -1,7 +1,7 @@
 class Ball {
   constructor(
     img = null,
-    x = 280 - ballDiameter / 2,
+    x = 258 - ballDiameter / 2,
     y = 250 - ballDiameter / 2,
     type = "white",
     vx = 0, //velocityX
@@ -27,17 +27,19 @@ class Ball {
     }
 
     if (stick.power > 0 && stick.isLeftRelease) {
-    
       this.x = this.x + this.vx;
       this.y = this.y + this.vy;
       this.vx = this.vx * ballFriction;
       this.vy = this.vy * ballFriction;
-      console.log(this.vx+", "+this.vy);
+
+      sideAudio.volume = 0.6;
       if (this.x + ballDiameter > assets.table.width - 47) {
+        sideAudio.play();
         this.x = assets.table.width - 47 - ballDiameter;
         this.vx = -this.vx * ballFriction;
       }
       if (this.x < 52) {
+        sideAudio.play();
         this.x = 52;
         this.vx = -this.vx * ballFriction;
       }
@@ -45,15 +47,17 @@ class Ball {
         this.y + ballDiameter > assets.table.height - 48 &&
         (this.x + ballDiameter / 2 > 487 || this.x < 441)
       ) {
+        sideAudio.play();
         this.y = assets.table.height - 48 - ballDiameter;
         this.vy = -this.vy * ballFriction;
       }
       if (this.y < 51 && (this.x + ballDiameter / 2 > 487 || this.x < 442)) {
+        sideAudio.play();
         this.y = 51;
         this.vy = -this.vy * ballFriction;
       }
 
-      if (Math.abs(this.vx) < 0.01 && Math.abs(this.vy) < 0.01) {
+      if (Math.abs(this.vx) < 0.001 && Math.abs(this.vy) < 0.001) {
         stick.isLeftRelease = false;
         stick.power = 0;
         stick.x = this.x + ballDiameter / 2;
@@ -62,12 +66,13 @@ class Ball {
         stick.oy = 9;
         this.vx = 0;
         this.vy = 0;
-       
+        ballList.forEach((ball) => {
+          (ball.vx = 0), (ball.vy = 0);
+        });
         stick.isShot = false;
 
         i = 0; //testing
         nextturn = false; //testing
-        console.log("ya completer vayo ra"+stick.isShot);
       } else {
         stick.isLeftRelease = true;
         stick.isShot = true;
@@ -85,8 +90,10 @@ class Ball {
     this.vy = this.vy * ballFriction;
 
     if (this.x + ballDiameter > assets.table.width - 47) {
+      
       this.x = assets.table.width - 47 - ballDiameter;
       this.vx = -this.vx * ballFriction;
+      
     }
     if (this.x < 52) {
       this.x = 52;
@@ -118,8 +125,6 @@ class Ball {
   shoot(power, rotation) {
     this.vx = (power * Math.cos(rotation)) / 160;
     this.vy = (power * Math.sin(rotation)) / 160;
-    console.log(this.vx+", "+this.vy+", "+rotation);
-
   }
   checkCollision(checkerball) {
     if (this.hidden) {
@@ -140,7 +145,9 @@ class Ball {
         if (firstcollidedball == "") {
           firstcollidedball = ballList[i].type;
         }
-
+        if(checkerball.type=="white"){
+        ballCollideAudio.play();
+        }
         resolveCollision(checkerball, ballList[i]);
       }
     }
@@ -151,9 +158,9 @@ class Ball {
       if (this.type == player1.playerBall) {
         player1.ballCount = player1.ballCount - 1;
       } else if (this.type == "white") {
-       
-        i=0
-        nextturn=true
+        foulAudio.play();
+        i = 0;
+        nextturn = true;
       } else if (this.type == "black" && player1.ballCount > 0) {
         player2.isPlayerWin = true;
       } else if (this.type == "black" && player1.ballCount == 0) {
@@ -162,7 +169,9 @@ class Ball {
         player2.ballCount = player2.ballCount - 1;
 
         i = 0;
+        foulAudio.play();
         foul = true;
+
         //gameRules.nextTurnfunction();
 
         ///////////////////
@@ -171,15 +180,16 @@ class Ball {
       if (this.type == player2.playerBall) {
         player2.ballCount = player2.ballCount - 1;
       } else if (this.type == "white") {
-        i=0
-        nextturn=true
+        foulAudio.play();
+        i = 0;
+        nextturn = true;
       } else if (this.type == "black" && player2.ballCount > 0) {
         player1.isPlayerWin = true;
       } else if (this.type == "black" && player2.ballCount == 0) {
         player2.isPlayerWin = true;
       } else {
         player1.ballCount = player1.ballCount - 1;
-
+        foulAudio.play();
         foul = true;
         i = 0;
         //gameRules.nextTurnfunction();
@@ -196,9 +206,8 @@ class Ball {
       this.ispocketing = true;
       this.hidden = true;
       foul = false;
-      
+
       stick.isShot = true;
-     
     }
     for (let i = 0; i < bigPocketCenters.length; i++) {
       let distancepocket = distance(
@@ -210,6 +219,7 @@ class Ball {
       //  if(i%2==0){
       if (distancepocket < radiusBigpocket) {
         if (this.x == bigPocketCenters[i].xPosition) {
+          pocketAudio.play();
           this.ispocketing = true;
           pocketedBallAtInstant.push(this.type);
           this.turnchecker();
@@ -218,7 +228,7 @@ class Ball {
         this.y = bigPocketCenters[i].yPosition;
         this.vx = 0;
         this.vy = 0;
-        this.hidden=true
+        this.hidden = true;
         // if (this.type != "white") {
         //   this.hidden = true;
         // }
@@ -239,6 +249,7 @@ class Ball {
       );
       if (distancepocket < radiusSmallpocket) {
         if (this.x == smallPocketCenters[i].xPosition) {
+          pocketAudio.play();
           this.ispocketing = true;
           pocketedBallAtInstant.push(this.type);
           this.turnchecker();
@@ -248,7 +259,7 @@ class Ball {
         // if (this.type != "white") {
         //   this.hidden = true;
         // }
-        this.hidden=true
+        this.hidden = true;
         this.vx = 0;
         this.vy = 0;
       } else {
@@ -260,6 +271,7 @@ class Ball {
         );
         if (distancepocket < radiusSmallpocket) {
           if (this.x == smallPocketCenters[i].xPosition) {
+            pocketAudio.play();
             this.ispocketing = true;
             pocketedBallAtInstant.push(this.type);
             this.turnchecker();
@@ -269,7 +281,7 @@ class Ball {
           // if (this.type != "white") {
           //   this.hidden = true;
           // }
-          this.hidden=true
+          this.hidden = true;
           this.vx = 0;
           this.vy = 0;
         }

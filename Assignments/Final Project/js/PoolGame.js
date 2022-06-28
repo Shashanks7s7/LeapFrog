@@ -10,7 +10,6 @@ class PoolGame {
     }
 
     if (stick.isShot) {
-      console.log("shot true");
       ballList.forEach((ball) => {
         ball.checkPockting();
         ball.checkCollision(ball);
@@ -24,7 +23,6 @@ class PoolGame {
           gameRules.ballAssign();
         }
         gameRules.fouldetection(player);
-
         gameRules.nextTurnfunction();
         player.updateScoreball();
         gameRules.endGame(player);
@@ -40,9 +38,9 @@ class PoolGame {
     newTable.clear();
   }
   draw() {
-    if(vscpu){
-    newTable.drawImage(assets.table, 0, 0);
-    }else{
+    if (vscpu) {
+      newTable.drawImage(assets.table, 0, 0);
+    } else {
       newTable.drawImage(assets.tableTwo, 0, 0);
     }
     ballList.forEach((ball) => {

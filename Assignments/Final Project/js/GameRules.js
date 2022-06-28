@@ -17,6 +17,7 @@ class GameRules {
           return;
         }
         if (player1.playerTurn) {
+          firstcollidedball = ball.type;
           if (ball.type == "red") {
             player1.playerBall = "red";
             player2.playerBall = "yellow";
@@ -25,6 +26,7 @@ class GameRules {
             player2.playerBall = "red";
           }
         } else {
+          firstcollidedball = ball.type;
           if (ball.type == "red") {
             player2.playerBall = "red";
 
@@ -53,18 +55,23 @@ class GameRules {
 
   fouldetection(player) {
     if (player.playerTurn) {
-  
       if (firstcollidedball == "" && !stick.isShot && i == 0) {
         foul = true;
+        foulAudio.play();
         nextturn = true;
-console.log("mee1");
+        console.log("1111");
         return;
       } else if (
         player.playerBall == "" &&
         firstcollidedball != "" &&
         !stick.isShot
       ) {
-        console.log("2222+"+stick.isShot);
+        if (firstcollidedball == "black") {
+          foul = true;
+          foulAudio.play();
+          nextturn = true;
+        }
+        console.log("2222+" + stick.isShot);
         firstcollidedball = "";
         nextturn = true;
       } else if (
@@ -87,6 +94,7 @@ console.log("mee1");
               firstcollidedball = "";
               whiteball.hidden = true;
               foul = true;
+              foulAudio.play();
               whiteball.ispocketing = true;
 
               nextturn = true;
@@ -95,6 +103,7 @@ console.log("mee1");
             if (pocketedball != player.playerBall && pocketedball != "white") {
               firstcollidedball = "";
               foul = true;
+              foulAudio.play();
               nextturn = true;
               console.log("33334444444");
             }
@@ -106,9 +115,16 @@ console.log("mee1");
         !stick.isShot &&
         i == 0
       ) {
+        if (firstcollidedball == "black" && player.ballCount == 0) {
+          firstcollidedball = "";
+          nextturn = true;
+          return;
+        }
+
         firstcollidedball = "";
 
         foul = true;
+        foulAudio.play();
         nextturn = true;
         console.log("444444444");
       }

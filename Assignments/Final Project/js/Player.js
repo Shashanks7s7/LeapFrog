@@ -53,6 +53,3 @@ let player2 = new Player("User", "Player Two", "", 7, false, false);
 playerList.push(player1);
 playerList.push(player2);
 player1.displayScoreball();
-
-
-
