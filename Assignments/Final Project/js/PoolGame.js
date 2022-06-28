@@ -1,25 +1,22 @@
 class PoolGame {
   constructor() {}
   update() {
-    if(player1.playerTurn||!cpu){
-  stick.update();
-    
+    if (player1.playerTurn || !cpu) {
+      stick.update();
     }
-    if(vscpu && !stick.isShot){
-      cpu.findnearestball()
-      }
+    if (vscpu && !stick.isShot) {
+      cpu.findCpuBall();
+      cpu.findnearestball();
+    }
 
-      ballList.forEach((ball) => {
-        ball.checkPockting();
-        ball.checkCollision(ball);
-        if (ball != whiteball) {
-          ball.updateeachball();
-        }
-      });
+    ballList.forEach((ball) => {
+      ball.checkPockting();
+      ball.checkCollision(ball);
+      if (ball != whiteball) {
+        ball.updateeachball();
+      }
+    });
     if (stick.isShot) {
-     
-        
-      
       whiteball.update();
       playerList.forEach((player) => {
         if (player.playerBall == "") {

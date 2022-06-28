@@ -128,6 +128,19 @@ class Stick {
         }
       };
     }
-  }}
+  }else{
+    if (whiteball.hidden || foul) {
+      stick.power=0
+      whiteball.x = getRandom(55,600);
+      whiteball.y = getRandom(55,200);
+      whiteball.hidden = false;
+      whiteball.ispocketing = false;
+      stick.ox = 965;
+      stick.isShot = false;
+      stick.x =whiteball.x + ballDiameter / 2;
+      stick.y = whiteball.y + ballDiameter / 2;
+    }
+  }
+}
 }
 const stick = new Stick();

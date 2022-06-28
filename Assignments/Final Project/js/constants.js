@@ -1,5 +1,6 @@
 let vscpu=false
 let cpu=null
+let cpuball=[]
 const ballDiameter=27
 const ballFriction=0.975
 const displayBallList = document.getElementById(
