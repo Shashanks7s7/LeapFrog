@@ -4,10 +4,7 @@ class PoolGame {
     if (player1.playerTurn || !cpu) {
       stick.update();
     }
-    if (vscpu && !stick.isShot) {
-      cpu.findCpuBall();
-      cpu.findnearestball();
-    }
+ 
 
     if (stick.isShot) {
       ballList.forEach((ball) => {
@@ -31,8 +28,13 @@ class PoolGame {
       whiteball.checkPockting();
       firstcollidedball = "";
       pocketedBallAtInstant = [];
+      if (vscpu && !stick.isShot&&player2.playerTurn) {
+        cpu.findCpuBall();
+        cpu.findnearestball();
+      }
       player1.updateScoreball();
       player2.updateScoreball();
+
     }
 
     newTable.clear();

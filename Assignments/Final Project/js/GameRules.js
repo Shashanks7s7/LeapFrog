@@ -54,6 +54,7 @@ class GameRules {
   }
 
   fouldetection(player) {
+   console.log( pocketedBallAtInstant)
     if (player.playerTurn) {
       if (firstcollidedball == "" && !stick.isShot && i == 0) {
         foul = true;

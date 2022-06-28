@@ -132,7 +132,7 @@ class Stick {
         };
       }
     } else {
-      if (whiteball.hidden || foul) {
+      if ((whiteball.hidden || foul)&&player2.playerTurn) {
         stick.power = 0;
         whiteball.x = getRandom(55, 600);
         whiteball.y = getRandom(55, 200);
