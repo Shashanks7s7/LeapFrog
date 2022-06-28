@@ -16,7 +16,7 @@ function assetsload(imgname) {
   };
   return image;
 }
-
+assets.tableTwo=assetsload("8ballpool.png");
 assets.table = assetsload("newboard.png");
 assets.stick = assetsload("stick.png");
 assets.whiteball = assetsload("white_ball.png");

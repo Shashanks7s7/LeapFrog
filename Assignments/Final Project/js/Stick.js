@@ -139,6 +139,7 @@ class Stick {
       stick.isShot = false;
       stick.x =whiteball.x + ballDiameter / 2;
       stick.y = whiteball.y + ballDiameter / 2;
+      foul=false
     }
   }
 }

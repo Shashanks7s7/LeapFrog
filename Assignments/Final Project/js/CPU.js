@@ -22,11 +22,14 @@ class CPU {
       let base = sort[1][1][0]-whiteball.x ;
       let perpendicular = sort[1][1][1]-whiteball.y ;
       stick.rotation = Math.atan2(perpendicular,base);
+      const rotate=getRandomFloat(0.8,1.3,3)
     stick.power = getRandom(1500,4000);
      stick.isLeftRelease = true;
-      stick.isShot = true;
-     whiteball.shoot(stick.power, stick.rotation);
-    
+      stick.isShot = true
+     whiteball.shoot(stick.power,stick.rotation*rotate);
+     
+     console.log(stick.rotation);
+   
    
       
     }

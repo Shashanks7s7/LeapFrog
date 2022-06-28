@@ -27,12 +27,12 @@ class Ball {
     }
 
     if (stick.power > 0 && stick.isLeftRelease) {
-     
+    
       this.x = this.x + this.vx;
       this.y = this.y + this.vy;
       this.vx = this.vx * ballFriction;
       this.vy = this.vy * ballFriction;
-
+      console.log(this.vx+", "+this.vy);
       if (this.x + ballDiameter > assets.table.width - 47) {
         this.x = assets.table.width - 47 - ballDiameter;
         this.vx = -this.vx * ballFriction;
@@ -67,8 +67,10 @@ class Ball {
 
         i = 0; //testing
         nextturn = false; //testing
+        console.log("ya completer vayo ra"+stick.isShot);
       } else {
         stick.isLeftRelease = true;
+        stick.isShot = true;
       }
     }
   }
@@ -116,6 +118,7 @@ class Ball {
   shoot(power, rotation) {
     this.vx = (power * Math.cos(rotation)) / 160;
     this.vy = (power * Math.sin(rotation)) / 160;
+    console.log(this.vx+", "+this.vy+", "+rotation);
 
   }
   checkCollision(checkerball) {
@@ -148,6 +151,7 @@ class Ball {
       if (this.type == player1.playerBall) {
         player1.ballCount = player1.ballCount - 1;
       } else if (this.type == "white") {
+       
         i=0
         nextturn=true
       } else if (this.type == "black" && player1.ballCount > 0) {

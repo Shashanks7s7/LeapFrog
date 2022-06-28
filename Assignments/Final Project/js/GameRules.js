@@ -53,7 +53,7 @@ class GameRules {
 
   fouldetection(player) {
     if (player.playerTurn) {
-      console.log(firstcollidedball+"iuoo   "+i+stick.isShot);
+  
       if (firstcollidedball == "" && !stick.isShot && i == 0) {
         foul = true;
         nextturn = true;
@@ -64,7 +64,7 @@ console.log("mee1");
         firstcollidedball != "" &&
         !stick.isShot
       ) {
-        console.log("2222");
+        console.log("2222+"+stick.isShot);
         firstcollidedball = "";
         nextturn = true;
       } else if (

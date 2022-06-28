@@ -9,14 +9,15 @@ class PoolGame {
       cpu.findnearestball();
     }
 
-    ballList.forEach((ball) => {
-      ball.checkPockting();
-      ball.checkCollision(ball);
-      if (ball != whiteball) {
-        ball.updateeachball();
-      }
-    });
     if (stick.isShot) {
+      console.log("shot true");
+      ballList.forEach((ball) => {
+        ball.checkPockting();
+        ball.checkCollision(ball);
+        if (ball != whiteball) {
+          ball.updateeachball();
+        }
+      });
       whiteball.update();
       playerList.forEach((player) => {
         if (player.playerBall == "") {
@@ -39,8 +40,11 @@ class PoolGame {
     newTable.clear();
   }
   draw() {
+    if(vscpu){
     newTable.drawImage(assets.table, 0, 0);
-
+    }else{
+      newTable.drawImage(assets.tableTwo, 0, 0);
+    }
     ballList.forEach((ball) => {
       ball.draw();
     });

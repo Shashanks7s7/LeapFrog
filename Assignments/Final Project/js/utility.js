@@ -11,6 +11,11 @@ function distance(x1, y1, x2, y2) {
   const dy = y2 - y1;
   return Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
 }
+function getRandomFloat(min, max, decimals) {
+  const str = (Math.random() * (max - min) + min).toFixed(decimals);
+
+  return parseFloat(str);
+}
 function rotate2(vx, vy, angle) {
   return {
     x: vx * Math.cos(angle) - vy * Math.sin(angle),
