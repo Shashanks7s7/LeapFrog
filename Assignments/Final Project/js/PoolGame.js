@@ -1,11 +1,7 @@
 class PoolGame {
   constructor() {}
   update() {
-    if (player1.playerTurn || !cpu) {
-      stick.update();
-    }
- 
-
+    stick.update();
     if (stick.isShot) {
       ballList.forEach((ball) => {
         ball.checkPockting();
@@ -18,33 +14,25 @@ class PoolGame {
       playerList.forEach((player) => {
         if (player.playerBall == "") {
           gameRules.ballAssign();
+        } else {
+          gameRules.fouldetection(player);
         }
-        gameRules.fouldetection(player);
+
         gameRules.nextTurnfunction();
         player.updateScoreball();
-        gameRules.endGame(player);
       });
     } else {
       whiteball.checkPockting();
       firstcollidedball = "";
-      pocketedBallAtInstant = [];
-      if (vscpu && !stick.isShot&&player2.playerTurn) {
-        cpu.findCpuBall();
-        cpu.findnearestball();
-      }
       player1.updateScoreball();
       player2.updateScoreball();
-
     }
 
     newTable.clear();
   }
   draw() {
-    if (vscpu) {
-      newTable.drawImage(assets.table, 0, 0);
-    } else {
-      newTable.drawImage(assets.tableTwo, 0, 0);
-    }
+    newTable.drawImage(assets.table, 0, 0);
+
     ballList.forEach((ball) => {
       ball.draw();
     });
@@ -52,12 +40,11 @@ class PoolGame {
   }
 }
 const game = new PoolGame();
-let requestAnimation = null;
 function play() {
   if (!isloading) {
     game.update();
     game.draw();
   }
-  requestAnimation = requestAnimationFrame(play);
+  requestAnimationFrame(play);
 }
 play();

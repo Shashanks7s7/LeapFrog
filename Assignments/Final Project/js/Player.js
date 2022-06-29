@@ -49,7 +49,15 @@ class Player {
 }
 let playerList = [];
 const player1 = new Player("User", "Player One", "", 7, true, false);
-let player2 = new Player("User", "Player Two", "", 7, false, false);
+const player2 = new Player("User", "Player Two", "", 7, false, false);
 playerList.push(player1);
 playerList.push(player2);
+const displayBallList = document.getElementById(
+  "scorecard__scorebox--profile--balllist"
+);
+const playerName = document.getElementById("scorecard__scorebox--profile--txt");
+const playerprofile = document.getElementById(
+  "scorecard__scorebox--ballProfile"
+);
+
 player1.displayScoreball();

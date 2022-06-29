@@ -34,3 +34,4 @@ class Table {
 
 const newTable = new Table();
 newTable.create();
+console.log(newTable.canvas.getBoundingClientRect());
