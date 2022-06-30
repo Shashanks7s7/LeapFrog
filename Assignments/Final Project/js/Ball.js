@@ -1,12 +1,13 @@
+
 class Ball {
   constructor(
     img = null,
-    x = 280 - ballDiameter / 2,
+    x = 258 - ballDiameter / 2,
     y = 250 - ballDiameter / 2,
     type = "white",
     vx = 0, //velocityX
     vy = 0, //velocityY
-    mass = 1,
+    mass = 2,
 
     hidden = false,
     ispocketing = false
@@ -32,11 +33,14 @@ class Ball {
       this.vx = this.vx * ballFriction;
       this.vy = this.vy * ballFriction;
 
+      sideAudio.volume = 0.6;
       if (this.x + ballDiameter > assets.table.width - 47) {
+        sideAudio.play();
         this.x = assets.table.width - 47 - ballDiameter;
         this.vx = -this.vx * ballFriction;
       }
       if (this.x < 52) {
+        sideAudio.play();
         this.x = 52;
         this.vx = -this.vx * ballFriction;
       }
@@ -44,15 +48,17 @@ class Ball {
         this.y + ballDiameter > assets.table.height - 48 &&
         (this.x + ballDiameter / 2 > 487 || this.x < 441)
       ) {
+        sideAudio.play();
         this.y = assets.table.height - 48 - ballDiameter;
         this.vy = -this.vy * ballFriction;
       }
       if (this.y < 51 && (this.x + ballDiameter / 2 > 487 || this.x < 442)) {
+        sideAudio.play();
         this.y = 51;
         this.vy = -this.vy * ballFriction;
       }
 
-      if (Math.abs(this.vx) < 0.01 && Math.abs(this.vy) < 0.01) {
+      if (Math.abs(this.vx) < 0.001 && Math.abs(this.vy) < 0.001) {
         stick.isLeftRelease = false;
         stick.power = 0;
         stick.x = this.x + ballDiameter / 2;
@@ -61,13 +67,16 @@ class Ball {
         stick.oy = 9;
         this.vx = 0;
         this.vy = 0;
-
+        ballList.forEach((ball) => {
+          (ball.vx = 0), (ball.vy = 0);
+        });
         stick.isShot = false;
 
         i = 0; //testing
         nextturn = false; //testing
       } else {
         stick.isLeftRelease = true;
+        stick.isShot = true;
       }
     }
   }
@@ -82,8 +91,10 @@ class Ball {
     this.vy = this.vy * ballFriction;
 
     if (this.x + ballDiameter > assets.table.width - 47) {
+      
       this.x = assets.table.width - 47 - ballDiameter;
       this.vx = -this.vx * ballFriction;
+      
     }
     if (this.x < 52) {
       this.x = 52;
@@ -100,7 +111,7 @@ class Ball {
       this.y = 51;
       this.vy = -this.vy * ballFriction;
     }
-    if (Math.abs(this.vx) < 0.3 && Math.abs(this.vy) < 0.3) {
+    if (Math.abs(this.vx) < 0.4 && Math.abs(this.vy) < 0.4) {
       this.vx = 0;
       this.vy = 0;
     }
@@ -113,8 +124,8 @@ class Ball {
     newTable.drawBall(this.img, this.x, this.y, ballDiameter, ballDiameter);
   }
   shoot(power, rotation) {
-    this.vx = (power * Math.cos(rotation)) / 150;
-    this.vy = (power * Math.sin(rotation)) / 150;
+    this.vx = (power * Math.cos(rotation)) / 160;
+    this.vy = (power * Math.sin(rotation)) / 160;
   }
   checkCollision(checkerball) {
     if (this.hidden) {
@@ -132,24 +143,71 @@ class Ball {
       );
 
       if (dist - ballDiameter < 0) {
-        alert("Dfdf")
         if (firstcollidedball == "") {
           firstcollidedball = ballList[i].type;
         }
-
+        if(checkerball.type=="white"){
+        ballCollideAudio.play();
+        }
         resolveCollision(checkerball, ballList[i]);
       }
     }
+  }
+  turnchecker() {
+    if (player1.playerTurn) {
+      //next turn condition
+      if (this.type == player1.playerBall) {
+        player1.ballCount = player1.ballCount - 1;
+      } else if (this.type == "white") {
+        foulAudio.play();
+        i = 0;
+        nextturn = true;
+      } else if (this.type == "black" && player1.ballCount > 0) {
+        player2.isPlayerWin = true;
+      } else if (this.type == "black" && player1.ballCount == 0) {
+        player1.isPlayerWin = true;
+      } else {
+        player2.ballCount = player2.ballCount - 1;
+
+        i = 0;
+        foulAudio.play();
+        foul = true;
+
+        //gameRules.nextTurnfunction();
+
+        ///////////////////
+      }
+    } else {
+      if (this.type == player2.playerBall) {
+        player2.ballCount = player2.ballCount - 1;
+      } else if (this.type == "white") {
+        foulAudio.play();
+        i = 0;
+        nextturn = true;
+      } else if (this.type == "black" && player2.ballCount > 0) {
+        player1.isPlayerWin = true;
+      } else if (this.type == "black" && player2.ballCount == 0) {
+        player2.isPlayerWin = true;
+      } else {
+        player1.ballCount = player1.ballCount - 1;
+        foulAudio.play();
+        foul = true;
+        i = 0;
+        //gameRules.nextTurnfunction();
+
+        ///////////////////
+      }
+    } ///upto here
   }
   checkPockting() {
     if (this.hidden && this.ispocketing) {
       return;
     }
     if (foul && this.type == "white") {
-      console.log("nononono");
       this.ispocketing = true;
       this.hidden = true;
       foul = false;
+
       stick.isShot = true;
     }
     for (let i = 0; i < bigPocketCenters.length; i++) {
@@ -162,52 +220,19 @@ class Ball {
       //  if(i%2==0){
       if (distancepocket < radiusBigpocket) {
         if (this.x == bigPocketCenters[i].xPosition) {
+          pocketAudio.play();
           this.ispocketing = true;
-          if (player1.playerTurn) {
-            //next turn condition
-            if (this.type == player1.playerBall) {
-              player1.ballCount = player1.ballCount - 1;
-            } else if (this.type == "white") {
-             foul=true
-            }else if (this.type == "black") {
-             
-            }
-             else {
-              player2.ballCount = player2.ballCount - 1;
-             
-              i = 0;
-              //gameRules.nextTurnfunction();
-
-              ///////////////////
-            }
-          } else {
-            if (this.type == player2.playerBall) {
-              player2.ballCount = player2.ballCount - 1;
-            } else if (this.type == "white") {
-             foul=true
-             
-            
-            }else if (this.type == "black") {
-             
-            }
-             else {
-              player1.ballCount = player1.ballCount - 1;
-             
-              i = 0;
-              //gameRules.nextTurnfunction();
-
-              ///////////////////
-            }
-          } ///upto here
+          pocketedBallAtInstant.push(this.type);
+          this.turnchecker();
         }
         this.x = bigPocketCenters[i].xPosition;
         this.y = bigPocketCenters[i].yPosition;
         this.vx = 0;
         this.vy = 0;
-        if(this.type!="white"){
-          this.hidden = true;
-        }
-        
+        this.hidden = true;
+        // if (this.type != "white") {
+        //   this.hidden = true;
+        // }
       }
       // }else{
       //     distancepocket=distance(bigPocketCenters[i].xPosition,bigPocketCenters[i].yPosition,this.x+ballDiameter,this.y+ballDiameter)
@@ -225,48 +250,17 @@ class Ball {
       );
       if (distancepocket < radiusSmallpocket) {
         if (this.x == smallPocketCenters[i].xPosition) {
+          pocketAudio.play();
           this.ispocketing = true;
-          //next turn condition
-          if (this.type == player1.playerBall) {
-            player1.ballCount = player1.ballCount - 1;
-          } else if (this.type == "white") {
-           foul=true
-          }else if (this.type == "black") {
-           
-          }
-           else {
-            player2.ballCount = player2.ballCount - 1;
-           
-            i = 0;
-            //gameRules.nextTurnfunction();
-
-            ///////////////////
-          }
-        } else {
-          if (this.type == player2.playerBall) {
-            player2.ballCount = player2.ballCount - 1;
-          } else if (this.type == "white") {
-           foul=true
-           
-          
-          }else if (this.type == "black") {
-           
-          }
-           else {
-            player1.ballCount = player1.ballCount - 1;
-           
-            i = 0;
-            //gameRules.nextTurnfunction();
-
-            ///////////////////
-          }
-          ///upto here
+          pocketedBallAtInstant.push(this.type);
+          this.turnchecker();
         }
         this.x = smallPocketCenters[i].xPosition;
         this.y = smallPocketCenters[i].yPosition;
-        if(this.type!="white"){
-          this.hidden = true;
-        }
+        // if (this.type != "white") {
+        //   this.hidden = true;
+        // }
+        this.hidden = true;
         this.vx = 0;
         this.vy = 0;
       } else {
@@ -278,13 +272,17 @@ class Ball {
         );
         if (distancepocket < radiusSmallpocket) {
           if (this.x == smallPocketCenters[i].xPosition) {
+            pocketAudio.play();
             this.ispocketing = true;
+            pocketedBallAtInstant.push(this.type);
+            this.turnchecker();
           }
           this.x = smallPocketCenters[i].xPosition;
           this.y = smallPocketCenters[i].yPosition;
-          if(this.type!="white"){
-            this.hidden = true;
-          }
+          // if (this.type != "white") {
+          //   this.hidden = true;
+          // }
+          this.hidden = true;
           this.vx = 0;
           this.vy = 0;
         }
@@ -293,6 +291,7 @@ class Ball {
   }
 }
 let ballList = [];
+let pocketedBallAtInstant = [];
 const whiteball = new Ball(assets.whiteball);
 ballList.push(whiteball);
 

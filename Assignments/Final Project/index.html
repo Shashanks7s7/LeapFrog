@@ -4,42 +4,46 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./images/favIcon.png" />
     <title>8 Ball Pool</title>
     <link rel="stylesheet" href="css/style.css" />
+ 
   </head>
   <body>
     <div id="assetsloader">LOADING...</div>
-    <!-- <div id="gameframe"></div> -->
+    <div id="gamemenu">
+      <div class="menu__item" id="one">Single Player</div>
+      <div class="menu__item" id="two" style="float: none; background-image: url('./images/MvsM.png');">Dual Player</div>
+      <div class="menu__item" id="three" style="float: none; background-image: url('./images/MvsM.png');">Online Play</div>
+    </div>
     <div id="scorecard">
       <div id="scorecard__scorebox">
-        <div id="scorecard__scorebox--ballProfile">
-          <!-- <img src="images/black_ball.png" alt="" /> -->
-        </div>
+        <div id="scorecard__scorebox--ballProfile"></div>
         <div id="scorecard__scorebox--profile">
           <div id="scorecard__scorebox--profile--txt"></div>
-          <div id="scorecard__scorebox--profile--balllist">
-            <!-- <img src="images/empty.png" alt="" />
-            <img src="images/empty.png" alt="" />
-            <img src="images/empty.png" alt="" />
-            <img src="images/empty.png" alt="" />
-            <img src="images/empty.png" alt="" />
-            <img src="images/empty.png" alt="" />
-            <img src="images/empty.png" alt="" /> -->
-          </div>
+          <div id="scorecard__scorebox--profile--balllist"></div>
         </div>
       </div>
+      <div id="scorecard__logo"></div>
     </div>
     <div id="gamebox">
       <canvas id="canvas"></canvas>
     </div>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
   <script src="js/assetsloader.js"></script>
   <script src="js/constants.js"></script>
   <script src="js/utility.js"></script>
   <script src="js/Table.js"></script>
+  
   <script src="js/Player.js"></script>
+ 
   <script src="js/Stick.js"></script>
   <script src="js/Ball.js"></script>
+  <script src="js/CPU.js"></script>
+  <script src="js/multiplayer.js"></script>
   <script src="js/PoolGame.js"></script>
   <script src="js/GameRules.js"></script>
+
 </html>
