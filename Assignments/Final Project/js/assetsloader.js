@@ -1,3 +1,17 @@
+const io = require("socket.io-client");
+const socket = io("https://localhost:3000", {
+  withCredentials: true,
+  extraHeaders: {
+    "my-custom-header": "abcd"
+  }
+});
+// const socket=io('http://localhost:3000');
+socket.on('init',handleInit)
+function handleInit(mesg) {
+  console.log(mesg)
+  
+}
+
 const assetsLoader = document.getElementById("assetsloader");
 const scoreCard = document.getElementById("scorecard");
 const gameBox = document.getElementById("gamebox");
@@ -67,17 +81,6 @@ document.getElementById("one").addEventListener("click", function () {
   vscpu = true;
   cpu = new CPU();
   cpu.findnearestball();
-});
-document.getElementById("three").addEventListener("click", function () {
-  themeAudio.play()
-  gameMenu.style.display = "none";
-  scoreCard.style.display = "block";
-  gameBox.style.display = "flex";
-  playerList.pop();
-  player2 = new Player("Online", "OnlinePlayer", "", 7, false, false);
-  playerList.push(player2);
-  online = true;
- multiplayer=new Multiplayer()
 });
 
 let ballCollideAudio = new Audio("./sound/BallsCollide2.wav");
