@@ -3,7 +3,7 @@
  * And render out the score data in the score screen display.
  */
 window.onload = async () => {
-  const response = await fetch("http://localhost:5000/get", {
+  const response = await fetch("https://Final-Project-BackEnd-API.shashanks7s7.repl.co/get", {
     method: "GET",
     headers: {
       accept: "application/json",
@@ -30,7 +30,9 @@ function submitAction() {
     return;
   }
   localStorage.setItem("playerName", nameInput.value);
+
   gameMenu.style.display = "block";
+  document.getElementById("login").style.display="none"
 }
 
 scorebutn.addEventListener("click", function (e) {

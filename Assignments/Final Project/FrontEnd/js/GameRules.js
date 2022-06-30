@@ -153,7 +153,7 @@ class GameRules {
         let rawData = { playerName, wins };
         data = JSON.stringify(rawData);
         await fetch(
-          "http://localhost:5000/post",
+          "https://Final-Project-BackEnd-API.shashanks7s7.repl.co/post",
 
           {
             method: "POST",
